@@ -1,0 +1,21 @@
+{
+  "name": "css-frameworks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trine-marie-sandberg/css-frameworks.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trine-marie-sandberg/css-frameworks/issues"
+  },
+  "homepage": "https://github.com/trine-marie-sandberg/css-frameworks#readme"
+}
