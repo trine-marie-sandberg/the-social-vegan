@@ -2,9 +2,11 @@
   "name": "css-frameworks",
   "version": "1.0.0",
   "description": "",
+  "source": "./src/index.html",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "sass src/scss:dist/assets/css",
+    "watch": "sass --watch src/scss:dist/assets/css"
   },
   "repository": {
     "type": "git",
