@@ -2,11 +2,9 @@
   "name": "css-frameworks",
   "version": "1.0.0",
   "description": "",
-  "source": "./src/index.html",
-  "main": "index.js",
   "scripts": {
-    "build": "sass src/scss:dist/assets/css",
-    "watch": "sass --watch src/scss:dist/assets/css"
+    "build": "sass src/assets/scss:dist/css",
+    "watch": "sass --watch src/scss:dist/css & live-server"
   },
   "repository": {
     "type": "git",
