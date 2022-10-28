@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "build": "sass src/assets/scss:dist/css",
-    "watch": "sass --watch src/scss:dist/css & live-server"
+    "watch": "sass --watch src/assets/scss:dist/css & live-server"
   },
   "repository": {
     "type": "git",
