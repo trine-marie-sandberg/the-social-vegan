@@ -10,28 +10,77 @@
     <link rel="stylesheet" href="/src/assets/fontawsome/css/all.css">
 </head>
 <body>
-    <header>
-      <div class="container m-0">
-        <div class="row">
-          <ul class="nav col-11">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="profile.html">Profile</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="login.html">Login/Logout</a>
-            </li>
-          </ul>
-          <div class="col-1">
-            <a href="index.html">The Social Vegan <i class="fa-solid fa-comments"></i></a>
+    <header class="text-bg-secondary">
+      <div class="container-fluid">
+        <div class="row m-0 p-0">
+          <div class="col-12 m-0 p-0 d-flex align-items-center justify-content-between">
+            <ul class="nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="profile.html">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="login.html">Login/Logout</a>
+              </li>
+            </ul>
+            <div class="">
+              <a href="index.html">The Social Vegan <i class="fa-solid fa-comments"></i></a>
+            </div>
           </div>
         </div>
       </div>
+      <form class="container-fluid p-4 text-bg-light">
+        <label for="search">
+          <p>Search <i class="fa-solid fa-arrow-right"></i></p>
+        </label>
+        <input id="search" class=" border rounded-4" type="text">
+      </form>
     </header>
-    <button type="button" class="btn btn-primary">Primary</button>
-    <button type="button" class="btn btn-secondary">Secondary</button>
+    <main class="container">
+      <div class="row d-flex flex-wrap">
+        <form class="m-2 p-4 col bg-white border border-info rounded-5">
+          <h2 class="m-4">Share something with others</h2>
+          <div class="m-4">
+            <label for="title">Title</label>
+            <input id="title" class="border rounded-1 w-100" type="text">
+          </div>
+          <div class="m-4">
+            <label for="post">Post</label>
+            <textarea id="post" class="border rounded-1 w-100"></textarea>
+          </div>
+          <button type="button" class="btn btn-secondary">Submit</button>
+        </form>
+        <div class="p-4 col">
+          <div class="d-flex flex-column">
+            <div class="bg-white m-2 p-4 d-flex flex-wrap flex-lg-nowrap flex-xl-nowrap border border-info rounded-5">
+              <div>
+                <h2>My favorite resepies</h2>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam officiis quaerat aspernatur 
+                  ab optio cupiditate ullam, ipsam ipsum! Reprehenderit, unde.
+                </p>
+              </div>
+              <div>
+                <img src="/src/assets/images/spice.jpg" class="img-fluid" alt="Responsive image">
+              </div>
+            </div>
+            <div class="bg-white m-2 p-4 d-flex flex-wrap flex-lg-nowrap flex-xl-nowrap border border-info rounded-5">
+              <div>
+                <h2>Cooking club?</h2>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, cumque.
+                </p>
+              </div>
+              <div>
+                <img src="/src/assets/images/cooking.jpg" class="img-fluid" alt="Responsive image">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
 </body>
 </html>
