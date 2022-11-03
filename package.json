@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "sass src/assets/scss:dist/css",
-    "watch": "sass --watch src/assets/scss:dist/css & live-server"
+    "build": "sass src/scss:dist/css",
+    "watch": "sass --watch src/scss:dist/css & live-server"
   },
   "repository": {
     "type": "git",
