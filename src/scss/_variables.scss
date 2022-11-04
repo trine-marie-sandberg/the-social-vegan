@@ -1,4 +1,3 @@
-$enable-gradients:            true;
 // $body-bg:                   $white;
 $blue:    #c8d8f0 !default;
 $indigo:  #6610f2 !default;
@@ -19,10 +18,8 @@ $gray-600: #D2DAD2;
 
 $gray-700: #546354;
 
-$link-color:                              $yellow;
-
-$primary:       $gray-500;
-$secondary:     $green;
+$primary:       $green;
+$secondary:     $yellow;
 $success:       $green !default;
 $info:          $gray-600;
 $warning:       $yellow !default;
@@ -31,5 +28,6 @@ $light:         $gray-500;
 
 $dark:          $gray-700;
 
-$body-bg:                   $white;
+$link-color:                              $secondary;
+$body-bg:                   $gray-500;
 $body-color:                $gray-700;

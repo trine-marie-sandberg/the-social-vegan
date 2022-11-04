@@ -7,21 +7,64 @@
     <title>Document</title>
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../dist/css/main.css">
+    <link rel="stylesheet" href="/src/assets/fontawsome/css/all.css">
 </head>
 <body>
-    <header>
-        <ul class="nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="profile.html">Profile</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="login.html">Login/Logout</a>
-            </li>
-          </ul>
+    <header class="text-bg-primary">
+      <div class="container-fluid p-3">
+        <div class="row m-0 p-0">
+          <div class="col-12 m-0 p-0 d-flex align-items-center justify-content-between">
+            <nav class="navbar navbar-expand-lg text-bg-primary">
+              <button class="navbar-toggler  text-bg-primary border-0 text-secondary" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars h3"></i>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="nav navbar-expand-lg rounded">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="profile.html">Profile</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="login.html">Login/Logout</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+            <div class="">
+              <a href="index.html" class="text-decoration-none"><h2 class="h4">The Social Vegan <i class="fa-solid fa-comments"></i></h2></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form class="container-fluid p-4 text-bg-light">
+        <label for="search">
+          <p>Search <i class="fa-solid fa-arrow-right"></i></p>
+        </label>
+        <input id="search" class=" border rounded-4" type="text">
+      </form>
     </header>
+    <main class="container">
+      <div class="row">
+        <div class="col">
+          <div></div>
+          <form class="m-2 p-4 col bg-white border border-info rounded-5">
+            <h2 class="m-4">Post to wall</h2>
+            <div class="m-4">
+              <label for="title">Title</label>
+              <input id="title" class="border rounded-1 w-100" type="text" required>
+            </div>
+            <div class="m-4">
+              <label for="post">Post</label>
+              <textarea id="post" class="border rounded-1 w-100" required minlength="15"></textarea>
+            </div>
+            <button class="btn btn-primary btn-md text-secondary m-4 p-4">Submit</button>
+          </form>
+        </div>
+        <div class="col"></div>
+      </div>
+    </main>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
 </body>
 </html>

@@ -10,23 +10,30 @@
     <link rel="stylesheet" href="/src/assets/fontawsome/css/all.css">
 </head>
 <body>
-    <header class="text-bg-secondary">
-      <div class="container-fluid">
+    <header class="text-bg-primary">
+      <div class="container-fluid p-3">
         <div class="row m-0 p-0">
           <div class="col-12 m-0 p-0 d-flex align-items-center justify-content-between">
-            <ul class="nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="profile.html">Profile</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="login.html">Login/Logout</a>
-              </li>
-            </ul>
+            <nav class="navbar navbar-expand-lg text-bg-primary">
+              <button class="navbar-toggler  text-bg-primary border-0 text-secondary" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars h3"></i>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="nav navbar-expand-lg rounded">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="profile.html">Profile</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="login.html">Login/Logout</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
             <div class="">
-              <a href="index.html">The Social Vegan <i class="fa-solid fa-comments"></i></a>
+              <a href="index.html" class="text-decoration-none"><h2 class="h4">The Social Vegan <i class="fa-solid fa-comments"></i></h2></a>
             </div>
           </div>
         </div>
@@ -39,20 +46,20 @@
       </form>
     </header>
     <main class="container">
-      <div class="row d-flex flex-wrap">
+      <div class="row">
         <form class="m-2 p-4 col bg-white border border-info rounded-5">
           <h2 class="m-4">Share something with others</h2>
           <div class="m-4">
             <label for="title">Title</label>
-            <input id="title" class="border rounded-1 w-100" type="text">
+            <input id="title" class="border rounded-1 w-100" type="text" required>
           </div>
           <div class="m-4">
             <label for="post">Post</label>
-            <textarea id="post" class="border rounded-1 w-100"></textarea>
+            <textarea id="post" class="border rounded-1 w-100" required minlength="15"></textarea>
           </div>
-          <button type="button" class="btn btn-secondary">Submit</button>
+          <button class="btn btn-primary btn-md text-secondary m-4 p-4">Submit</button>
         </form>
-        <div class="p-4 col">
+        <div class="p-2 col-12 col-lg-6">
           <div class="d-flex flex-column">
             <div class="bg-white m-2 p-4 d-flex flex-wrap flex-lg-nowrap flex-xl-nowrap border border-info rounded-5">
               <div>
@@ -63,7 +70,7 @@
                 </p>
               </div>
               <div>
-                <img src="/src/assets/images/spice.jpg" class="img-fluid" alt="Responsive image">
+                <img src="/src/assets/images/spice.jpg" class="img-fluid rounded-3" alt="Responsive image">
               </div>
             </div>
             <div class="bg-white m-2 p-4 d-flex flex-wrap flex-lg-nowrap flex-xl-nowrap border border-info rounded-5">
@@ -74,7 +81,7 @@
                 </p>
               </div>
               <div>
-                <img src="/src/assets/images/cooking.jpg" class="img-fluid" alt="Responsive image">
+                <img src="/src/assets/images/cooking.jpg" class="img-fluid rounded-3" alt="Responsive image">
               </div>
             </div>
           </div>
