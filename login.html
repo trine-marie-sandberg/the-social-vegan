@@ -46,6 +46,27 @@
       </form>
     </header>
     <main class="container">
+      <div class="m-2 p-4 bg-white border border-info rounded-5 d-flex justify-content-between">
+        <div>
+          <form class="m-2 p-4 col bg-white border border-info rounded-5">
+            <h2 class="m-4">Sign in</h2>
+            <div class="m-4">
+              <label for="username">Username</label>
+              <input id="username" class="border rounded-1 w-100" type="text"  required minlength="5">
+            </div>
+            <div class="m-4">
+              <label for="password">Password</label>
+              <input id="password" type="text" class="border rounded-1 w-100" required minlength="10">
+            </div>
+            <button class="btn btn-primary btn-md text-secondary m-4 p-4">Submit</button>
+          </form>
+          <div class="m-4">
+            <h2>Dont have an account?</h2>
+            <button class="btn btn-primary btn-md text-secondary">Create account</button>
+          </div>
+        </div>
+        <img src="/src/assets/images/plant-based.jpg" alt="A sign saying plant based" class="img-fluid rounded-5">
+      </div>
     </main>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
 </body>
