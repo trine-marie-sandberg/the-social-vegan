@@ -20,8 +20,7 @@ The Social Vegan is a project I built for my second year CSS frameworks course a
 1. Clone the repo:
 
 ```bash
-git clone git@github.com:Noroff-FEU-Assignments
-/cross-course-project-Kokkismile.git
+git clone git@github.com:trine-marie-sandberg/css-frameworks.git
 ```
 -or open with GitHub desctop. 
 
