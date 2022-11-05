@@ -1,6 +1,6 @@
 # The Social Vegan
 
-![gamehub-sample](https://user-images.githubusercontent.com/91562336/195551932-95547c22-2576-40e3-a608-1c0f3e78d680.jpg)
+![pr-screen](https://user-images.githubusercontent.com/91562336/200136089-4fb524aa-452c-4ac2-ba10-1a77e8fc5cc0.PNG)
 
 -Social media home, profile and login page created with Html Sass and Bootstrap.
 
@@ -26,6 +26,7 @@ git clone git@github.com:Noroff-FEU-Assignments
 -or open with GitHub desctop. 
 
 2. Install the dependencies (see the pacage.json file): bootstrap 5.2.2, live-server 1.2.2, and sass 1.55.0
+![pr-screen](https://user-images.githubusercontent.com/91562336/200136073-e051f2d6-d61d-4809-98e2-7128a0e127fd.PNG)
 
 ## Contact
 
