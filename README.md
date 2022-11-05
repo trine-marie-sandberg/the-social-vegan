@@ -26,7 +26,6 @@ git clone git@github.com:Noroff-FEU-Assignments
 -or open with GitHub desctop. 
 
 2. Install the dependencies (see the pacage.json file): bootstrap 5.2.2, live-server 1.2.2, and sass 1.55.0
-![pr-screen](https://user-images.githubusercontent.com/91562336/200136073-e051f2d6-d61d-4809-98e2-7128a0e127fd.PNG)
 
 ## Contact
 
