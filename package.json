@@ -1,7 +1,7 @@
 {
   "name": "css-frameworks",
   "version": "1.0.0",
-  "description": "",
+  "description": "Course assignment for CSS Frameworks. Social media webpage with homepage, profile and login page. Built with Bootstrap and sass",
   "scripts": {
     "build": "sass src/scss:dist/css",
     "watch": "sass --watch src/scss:dist/css & live-server"
@@ -10,8 +10,12 @@
     "type": "git",
     "url": "git+https://github.com/trine-marie-sandberg/css-frameworks.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "css",
+    "bootstrap",
+    "sass/scss"
+  ],
+  "author": "Trine Marie Sandberg",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/trine-marie-sandberg/css-frameworks/issues"
