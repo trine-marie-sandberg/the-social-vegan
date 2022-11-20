@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="the social vegan login page">
+    <title>TSV Login</title>
+    <link rel="stylesheet" href="/dist/css/main.css">
+    <link rel="stylesheet" href="/src/assets/fontawsome/css/all.css">
+</head>
+<body>
+    <header class="text-bg-primary">
+      <div class="container-fluid p-3">
+        <div class="row m-0 p-0">
+          <div class="col-12 m-0 p-0 d-flex align-items-center justify-content-between">
+            <nav class="navbar navbar-expand-lg text-bg-primary">
+              <button class="navbar-toggler  text-bg-primary border-0 text-secondary" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars h3"></i>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="nav navbar-expand-lg rounded">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="profile.html">Profile</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="login.html">Login</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+            <div class="">
+              <a href="index.html" class="text-decoration-none"><h2 class="h4">The Social Vegan <i class="fa-solid fa-comments"></i></h2></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form class="container-fluid p-4 text-bg-light">
+        <label for="search">
+          <p>Search <i class="fa-solid fa-arrow-right"></i></p>
+        </label>
+        <input id="search" class=" border rounded-4" type="text">
+      </form>
+    </header>
+    <main class="container">
+      <div class="m-2 p-4 bg-white border border-info rounded-5 d-flex flex-wrap flex-lg-nowrap justify-content-between">
+        <div>
+          <form class="m-2 p-4 col bg-white border border-info rounded-5" action="profile.html">
+            <h2 class="m-4">Sign in</h2>
+            <div class="m-4">
+              <label for="username">Username or email</label>
+              <input id="username" class="border rounded-1 w-100" type="text"  required minlength="5">
+            </div>
+            <div class="m-4">
+              <label for="password">Password</label>
+              <input id="password" type="password" class="border rounded-1 w-100" required minlength="10">
+            </div>
+            <button type="submit" class="btn btn-primary btn-md text-secondary m-4 p-4">Login</button>
+          </form>
+          <div class="m-4">
+            <h2>Don't have an account?</h2>
+            <button class="btn btn-primary btn-md text-secondary">Create account</button>
+          </div>
+        </div>
+        <img src="/src/assets/images/plant-based.jpg" alt="A sign saying plant based" class="img-fluid rounded-5">
+      </div>
+    </main>
+</body>
+</html>
