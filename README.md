@@ -6,7 +6,7 @@
 
 ## Description
 
-The Social Vegan is a project I built for my second year CSS frameworks course assignment at Noroff, studying front end development.
+The Social Vegan is a project I built for my second year CSS frameworks, and JavaScript 2 course assignment at Noroff, studying front end development.
 
 ## Built With
 
