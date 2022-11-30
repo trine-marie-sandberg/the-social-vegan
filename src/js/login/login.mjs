@@ -1,15 +1,7 @@
-import { testUser } from "./utils/testuser.mjs";
-
-export async function login(url) {
+export async function login(userToLogin) {
 
     //Login endpoint
-    const loginEndpoint = "/api/v1/social/auth/login";
-    
-    //User to login
-    const userToLogin = {
-        email: testUser.email,
-        password: testUser.password
-    };
+    const loginUrl = "https://nf-api.onrender.com/api/v1/social/auth/login";
     
     //Data to POST
     const postData = {
@@ -23,7 +15,7 @@ export async function login(url) {
     try {
 
         //fetch postData
-        const response = await fetch(url + loginEndpoint, postData);
+        const response = await fetch(loginUrl, postData);
         const json = await response.json();
         //Get accesstoken and store it
         const token = json.accessToken;
