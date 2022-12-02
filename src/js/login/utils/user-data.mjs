@@ -1,4 +1,4 @@
-//Returns data from form as an object
+//Returns registerUser from form
 export function userData(event) {
 
     event.preventDefault();
@@ -14,5 +14,4 @@ export function userData(event) {
     };
 
     return registerUser;
-    
 };
