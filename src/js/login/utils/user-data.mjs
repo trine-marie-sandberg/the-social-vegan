@@ -1,5 +1,4 @@
-const createAccount = document.querySelector("#submit-create");
-
+//Returns data from form as an object
 export function userData(event) {
 
     event.preventDefault();
