@@ -8,6 +8,7 @@
     <title>TSV Login</title>
     <link rel="stylesheet" href="/dist/css/main.css">
     <link rel="stylesheet" href="/src/assets/fontawsome/css/all.css">
+    <script type="module" src="/src/js/login/create-account.mjs"></script>
 </head>
 <body>
     <header class="text-bg-primary">
@@ -48,8 +49,12 @@
     <main class="container">
       <div class="m-0 m-lg-1 p-4 bg-white border border-info rounded-5 row">
         <div class="col">
-          <form class="m-0 m-lg-1 p-4 bg-white border border-info rounded-5" action="profile.html">
+          <form class="m-0 m-lg-1 p-4 bg-white border border-info rounded-5">
             <h2 class="m-4">Create Account</h2>
+            <div class="m-4">
+              <label for="username">Username</label>
+              <input id="username" class="border rounded-1 w-100" type="text">
+            </div>
             <div class="m-4">
               <label for="email">Email</label>
               <input id="email" class="border rounded-1 w-100" type="email">
@@ -59,10 +64,10 @@
               <input id="password" type="password" class="border rounded-1 w-100" required minlength="10">
             </div>
             <div class="m-4">
-                <label for="password">Repeat Password</label>
-                <input id="password" type="password" class="border rounded-1 w-100" required minlength="10">
+                <label for="password-rep">Repeat Password</label>
+                <input id="password-rep" type="password" class="border rounded-1 w-100" required minlength="10">
               </div>
-            <button type="submit" class="btn btn-primary btn-md text-secondary m-4 p-4">Submit</button>
+            <button type="submit" id="submit-create" class="btn btn-primary btn-md text-secondary m-4 p-4">Submit</button>
           </form>
           <div class="m-4">
             <h2>Already have an account?</h2>
