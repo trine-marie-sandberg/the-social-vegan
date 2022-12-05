@@ -17,6 +17,7 @@ export async function login(userToLogin) {
         //fetch postData
         const response = await fetch(loginUrl, postData);
         const json = await response.json();
+        console.log(json);
         //Get accesstoken and store it
         const token = json.accessToken;
         localStorage.setItem("accessToken", token);
