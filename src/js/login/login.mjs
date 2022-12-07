@@ -23,7 +23,7 @@ loginUser.addEventListener("click", function(event) {
                                 </div>`;
 
         setTimeout(() => {
-            window.location.replace("profile.html");
+            window.location.replace("/profile/");
         }, 500);
         
     } catch(error) {
