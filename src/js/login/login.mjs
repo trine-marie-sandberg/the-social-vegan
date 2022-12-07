@@ -1,26 +1,33 @@
 import { login } from "./login-handler.mjs";
 
-const loggInOutBtn = document.querySelector("#log-in-out");
-
-const API_BASE_URL = "https://nf-api.onrender.com";
-
 const loginUser = document.querySelector("#login");
+const successMsg = document.querySelector("#login-success-msg");
 loginUser.addEventListener("click", function(event) {
 
-    event.preventDefault();
+    try {
+        
+        event.preventDefault();
+        const email = document.querySelector("#email-username");
+        const password = document.querySelector("#password");
 
-    const email = document.querySelector("#email-username");
-    const password = document.querySelector("#password");
+        const loginData = {
+            email: email.value,
+            password: password.value,
+        };
 
-    const loginData = {
-        email: email.value,
-        password: password.value,
+        login(loginData);
+
+        successMsg.innerHTML = `<div class= "d-flex align-items-start">
+                                 <p class="px-3">Login successful</p>
+                                 <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                </div>`;
+
+        setTimeout(() => {
+            window.location.replace("profile.html");
+        }, 500);
+        
+    } catch(error) {
+
+        console.log(error)
     };
-
-    if(localStorage.getItem("accessToken")) {
-        loggInOutBtn.innerHTML = "Logout";
-    };
-
-    console.log(loginData)
-    login(loginData)
 });

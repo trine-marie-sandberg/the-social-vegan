@@ -4,10 +4,9 @@ export function logout() {
 
     loggoutBtn.addEventListener("click", function(event) {
 
-        if(!localStorage.getItem("accessToken")) {
+        if(localStorage.getItem("accessToken")) {
             
             event.preventDefault();
-            console.log(event);
             localStorage.removeItem("accessToken");
             loggoutBtn.innerHTML = "Login";
         };  
