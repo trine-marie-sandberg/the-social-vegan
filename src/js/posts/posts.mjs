@@ -1,9 +1,18 @@
-async function getFeed() {
+const userName = "anton_hollerudhagen";
 
-    const postsUrl = "https://nf-api.onrender.com/api/v1/social/posts";
+const allPostUrl = "https://nf-api.onrender.com/api/v1/social/posts";
+const userOnlyPostUrl = `https://nf-api.onrender.com/api/v1/social/profiles/${userName}/posts`;
+
+const user = localStorage.getItem("user");
+//const userName = "";
+const userJson = JSON.parse(user);
+console.log(userJson);
+
+export async function getPosts(url) {
 
     try {
         //
+
         const userToken = localStorage.getItem("accessToken");
 
         if (!localStorage.getItem("accessToken")) {
@@ -18,7 +27,7 @@ async function getFeed() {
                 },
             };
 
-            const response = await fetch(postsUrl, fetchOptions);
+            const response = await fetch(url, fetchOptions);
             const json = await response.json();
             console.log(json)
         };
@@ -28,4 +37,5 @@ async function getFeed() {
     };
 };
 
-getFeed();
+getPosts(allPostUrl);
+getPosts(userOnlyPostUrl);

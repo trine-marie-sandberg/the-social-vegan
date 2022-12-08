@@ -15,6 +15,8 @@ loginUser.addEventListener("click", function(event) {
             password: password.value,
         };
 
+        localStorage.setItem("user", JSON.stringify(loginData.email));
+
         login(loginData);
 
         successMsg.innerHTML = `<div class= "d-flex align-items-start">
