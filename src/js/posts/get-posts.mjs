@@ -18,8 +18,11 @@ export async function getPosts(url, userToken) {
             };
 
             const response = await fetch(url, fetchOptions);
+            console.log(url, fetchOptions)
             const json = await response.json();
-            console.log(json)
+            const postArray = json;
+            //console.log(postArray)
+            return postArray;
         };
         
     } catch (error) {
