@@ -21,7 +21,7 @@ loginUser.addEventListener("click", function(event) {
         login(loginData);
 
         successMsg.innerHTML = `<div class= "d-flex align-items-start">
-                                 <p class="px-3">Login successful</p>
+                                 <p class="px-3">Loging in</p>
                                  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                                 </div>`;
 

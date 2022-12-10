@@ -1,19 +1,20 @@
-const userName = "anton_hollerudhagen";
+import { storageLoad } from "../storage/localstorage.mjs";
 
 const allPostUrl = "https://nf-api.onrender.com/api/v1/social/posts";
-const userOnlyPostUrl = `https://nf-api.onrender.com/api/v1/social/profiles/${userName}/posts`;
 
-const user = localStorage.getItem("user");
-//const userName = "";
-const userJson = JSON.parse(user);
-console.log(userJson);
+const user = storageLoad("profile");
+const username = user.name;
+console.log(username)
+
+const userOnlyPostUrl = `https://nf-api.onrender.com/api/v1/social/profiles/${username}/posts`;
 
 export async function getPosts(url) {
 
     try {
         //
 
-        const userToken = localStorage.getItem("accessToken");
+        const userToken = storageLoad("accessToken");
+        console.log("USERTOKEN: " + userToken)
 
         if (!localStorage.getItem("accessToken")) {
             console.log("missing accessToken");
@@ -26,6 +27,7 @@ export async function getPosts(url) {
                     Authorization: `Bearer ${userToken}`,
                 },
             };
+            console.log(fetchOptions)
 
             const response = await fetch(url, fetchOptions);
             const json = await response.json();
