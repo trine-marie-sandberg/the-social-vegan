@@ -8,6 +8,7 @@ export function logout() {
             
             event.preventDefault();
             localStorage.removeItem("accessToken");
+            localStorage.removeItem("user");
             loggoutBtn.innerHTML = "Login";
         };  
     });
