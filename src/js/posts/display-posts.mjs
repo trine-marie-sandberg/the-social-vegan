@@ -8,7 +8,7 @@ export async function displayPosts(getPosts, container) {
 
             let image = posts[i].media;
             if(!image) {
-                image = "/src/assets/images/wild-and-free.jpg"
+                image = "/src/assets/images/wild-and-free.jpg";
             };
 
             const newPost = document.createElement("div");
@@ -25,12 +25,12 @@ export async function displayPosts(getPosts, container) {
                                    <div class="p-4">
                                      <img src="${image}" class="img-fluid rounded-3" alt="Responsive image" style="max-height: 250px">
                                    </div>
-                                 </div>`
+                                 </div>`;
 
             container.appendChild(newPost);
         };
 
     } catch(error) {
-        console.log(error)
-    }
+        console.log(error);
+    };
 };
