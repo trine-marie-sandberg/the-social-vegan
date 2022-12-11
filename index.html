@@ -49,7 +49,7 @@
     </header>
     <main class="container">
       <div class="row">
-        <form class="m-2 p-4 col bg-white border border-info rounded-5">
+        <div class="m-2 p-4 col bg-white border border-info rounded-5">
           <div class="m-4">
             <div class="d-flex">
               <h1>Welcome to The Social Vegan</h1>
@@ -67,16 +67,18 @@
             </p>
           </div>
           <h2 class="m-4">Share something with others</h2>
-          <div class="m-4">
-            <label for="title">Title</label>
-            <input id="title" class="border rounded-1 w-100" type="text" required minlength="3">
-          </div>
-          <div class="m-4">
-            <label for="post">Post</label>
-            <textarea id="post" class="border rounded-1 w-100" required minlength="15"></textarea>
-          </div>
-          <button class="btn btn-primary btn-md text-secondary m-4 p-4">Submit</button>
-        </form>
+          <form id="create-post">
+            <div class="m-4">
+              <label for="title">Title</label>
+              <input id="title" name="title" class="border rounded-1 w-100" type="text" required minlength="3">
+            </div>
+            <div class="m-4">
+              <label for="post">Post</label>
+              <textarea id="post" name="textarea" class="border rounded-1 w-100" required minlength="15"></textarea>
+            </div>
+            <button name="submitbtn" class="btn btn-primary btn-md text-secondary m-4 p-4">Submit</button>
+          </form>
+        </div>
         <div class="p-2 col-12 col-lg-6">
           <div class="d-flex flex-column">
             <div class="bg-white m-2 p-4 d-flex flex-wrap flex-lg-nowrap flex-xl-nowrap border border-info rounded-5">
