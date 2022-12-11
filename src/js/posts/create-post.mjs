@@ -7,6 +7,7 @@ export function createPost(form, url, token) {
         const post = {
             "title": form.title.value,
             "body": form.textarea.value,
+            "media": form.media.value,
         };
     
         const postData = {
