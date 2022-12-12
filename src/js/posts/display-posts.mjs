@@ -41,7 +41,14 @@ export async function displayPosts(getPosts, container, username) {
               const btnClasses = ["btn", "btn-primary", "btn-md", "text-secondary", "m-4", "edit-post-btn"];
               updateBtn.classList.add(...btnClasses);
 
-              updatePost(updateBtn);
+              const postData = [{
+                "title": posts[i].title,
+                "body": posts[i].body,
+                "tags": posts[i].tags,
+                "media": posts[i].media
+              }];
+
+              updatePost(updateBtn, postData);
             };
         };
 
