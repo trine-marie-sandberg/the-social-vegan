@@ -23,7 +23,8 @@ export function createPost(form, url, token) {
             try {
                 const response = await fetch(url, postData);
                 const json = await response.json();
-                console.log(json)
+                 window.location.reload();
+
             } catch (error) {
                 console.log(error);
             };

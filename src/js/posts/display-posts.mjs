@@ -1,4 +1,4 @@
-export async function displayPosts(getPosts, container) {
+export async function displayPosts(getPosts, container, username) {
 
     try {
 
@@ -12,22 +12,32 @@ export async function displayPosts(getPosts, container) {
             };
 
             const newPost = document.createElement("div");
+            const classesToAdd = ["bg-white", "m-2", "border", "border-info", "rounded-5"];
+            newPost.classList.add(...classesToAdd);
 
-            newPost.innerHTML = `<div class="bg-white m-2 p-4 border border-info rounded-5 d-flex flex-wrap flex-lg-nowrap flex-xl-nowrap">
-                                   <div class="p-4">
-                                     <h2>${posts[i].title}</h2>
-                                     <figure class="figure d-flex">
-                                       <figcaption class="figure-caption text-primary m-2">${posts[i].id}</figcaption>
-                                       <img src="/src/assets/images/sheephead.jpg" class="text-bg-light figure-img img-fluid rounded-circle text-bg-primary">
-                                     </figure>
-                                     <p>${posts[i].body}</p>
-                                   </div>
-                                   <div class="p-4">
-                                     <img src="${image}" class="img-fluid rounded-3" alt="Responsive image" style="max-height: 250px">
-                                   </div>
+            newPost.innerHTML = `<div class="d-flex flex-wrap flex-lg-nowrap flex-xl-nowrap m-4">
+                                   <div>
+                                      <figure class="figure p-4">
+                                        <figcaption class="figure-caption text-primary m-2">${posts[i].id}</figcaption>
+                                        <img src="/src/assets/images/sheephead.jpg" class="text-bg-light figure-img img-fluid rounded-circle text-bg-primary">
+                                      </figure>
+                                      <h2 class="p-4">${posts[i].title}</h2>
+                                   </div>  
+                                    <div class="p-4">
+                                       <img src="${image}" class="img-fluid rounded-3 p-4" alt="Responsive image" style="max-height: 250px">
+                                       <p class="p-4">${posts[i].body}</p>
+                                    </div>
                                  </div>`;
 
             container.appendChild(newPost);
+            
+            if(username === posts[i].author.name) {
+              const updateBtn = document.createElement("button");
+              updateBtn.innerText = "Edit post";
+              newPost.appendChild(updateBtn);
+              const btnClasses = ["btn", "btn-primary", "btn-md", "text-secondary"];
+              updateBtn.classList.add(...btnClasses)
+            };
         };
 
     } catch(error) {
