@@ -41,14 +41,18 @@ export async function displayPosts(getPosts, container, username) {
               const btnClasses = ["btn", "btn-primary", "btn-md", "text-secondary", "m-4", "edit-post-btn"];
               updateBtn.classList.add(...btnClasses);
 
-              const postData = [{
+              const editModal = document.createElement("div");
+              newPost.appendChild(editModal);
+
+              const postData = {
                 "title": posts[i].title,
                 "body": posts[i].body,
                 "tags": posts[i].tags,
-                "media": posts[i].media
-              }];
+                "media": posts[i].media,
+                "id": posts[i].id,
+              };
 
-              updatePost(updateBtn, postData);
+              updatePost(updateBtn, postData, editModal);
             };
         };
 
