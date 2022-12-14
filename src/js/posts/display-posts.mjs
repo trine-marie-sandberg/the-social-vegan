@@ -53,6 +53,9 @@ export async function displayPosts(getPosts, container, username) {
               deleteBtn.classList.add("delete-post-btn");
               deleteBtn.style.backgroundColor = "darkred";
 
+              const deleteModal = document.createElement("div");
+              newPost.appendChild(deleteModal);
+
               const postData = {
                 "title": posts[i].title,
                 "body": posts[i].body,
@@ -62,7 +65,7 @@ export async function displayPosts(getPosts, container, username) {
               };
 
               updatePost(updateBtn, postData, editModal);
-              deletePost(deleteBtn, postData.id);
+              deletePost(deleteBtn, postData.id, deleteModal);
             };
         };
 

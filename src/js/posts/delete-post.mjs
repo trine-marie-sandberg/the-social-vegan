@@ -1,14 +1,27 @@
 import { storageLoad } from "../storage/localstorage.mjs";
 
-export function deletePost(btn, id) {
+export function deletePost(deleteBtn, id, deleteModal) {
 
     const deleteUrl = `https://nf-api.onrender.com/api/v1/social/posts/${id}`;
 
-    btn.addEventListener("click", (event) => {
+    deleteBtn.addEventListener("click", (event) => {
         console.log(deleteUrl);
         const token = storageLoad("accessToken");
 
-        async function removePost() {
+        deleteModal.innerHTML = `<h2>Delete this post?</h2>
+                                <p class="btn btn-primary btn-md text-secondary m-4 delete-confirm">Delete</p>
+                                <p class="btn btn-primary btn-md text-secondary m-4 delete-no">No</p>`;
+                                
+                                const delNo = document.querySelector(".delete-no");
+                                delNo.addEventListener("click", () => {
+                                    deleteModal.style.display = "none";
+                                });
+
+        const delComfirm = document.querySelector(".delete-confirm");
+
+        deleteModal.style.display = "block";
+
+        delComfirm.onclick = async function removePost() {
 
             try {
                 const postData = {
@@ -27,7 +40,6 @@ export function deletePost(btn, id) {
                 console.log(error)
             }
         };
-
-        removePost();
+        //removePost();
     });
 };
