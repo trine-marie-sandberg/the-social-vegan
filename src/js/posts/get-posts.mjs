@@ -4,7 +4,7 @@ export async function getPosts(url, userToken) {
 
         if (!localStorage.getItem("accessToken")) {
 
-            console.log("missing accessToken");
+            console.log("Warning: accessToken not found");
 
         } else {
 
@@ -18,7 +18,7 @@ export async function getPosts(url, userToken) {
             };
 
             const response = await fetch(url, fetchOptions);
-            console.log(url, fetchOptions)
+
             const json = await response.json();
             const postArray = json;
             //console.log(postArray)

@@ -9,3 +9,9 @@ const testUser2 = {
     email: "kokkismile@noroff.no",
     password: "123smile",
 };
+
+const testUser3 = {
+    name: "Simba",
+    email: "simba@noroff.no",
+    password: "goodBoy3",
+}

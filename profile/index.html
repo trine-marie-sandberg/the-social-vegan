@@ -50,119 +50,71 @@
     <main class="container">
       <div class="row d-flex flex-column flex-lg-row">
         <div class="col col-xl-8">
-          <div class="m-2 p-4 bg-white border border-info rounded-5">
-            <div class="m-4 d-flex flex-wrap flex-lg-nowrap align-items-center">
-              <img src="/src/assets/images/example-user.jpg" class="img-fluid rounded-circle" alt="profile image">
-              <i class="fa-regular fa-comment-dots fa-2x p-2 mb-5"></i>
-            </div>
-            <div class="p-4">
-              <h3>Is wool bad?</h3>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque voluptatum quisquam sequi corrupti dicta assumenda, 
-                aliquam quas. Dicta quasi nisi dolores necessitatibus doloribus recusandae cupiditate quibusdam veniam placeat quam? Alias?
-              </p>
-              <img src="/src/assets/images/sheep.jpg" class="img-fluid rounded-5" alt="A sheep staring towards the camera">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil consequatur quisquam, laudantium repellat quia ad saepe veritatis voluptate nulla, sit ab, 
-                inventore eveniet dolores asperiores numquam sed ducimus dolore deserunt assumenda itaque exercitationem pariatur similique consequuntur. Odit ab sunt laborum.
-              </p>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, veniam.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nesciunt debitis, vitae aliquid laboriosam cumque inventore. Recusandae magni dicta perspiciatis?
-              </p>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur accusamus debitis voluptatem distinctio, sint mollitia natus 
-                consequatur beatae aperiam minus ut cupiditate quidem illo odio aut magni laboriosam repudiandae ipsam?
-              </p>
-            </div>
-            <div class="p-4">
-              <div>
-                <h3>My favorite recepies</h3>
-                <p>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam officiis quaerat aspernatur 
-                  ab optio cupiditate ullam, ipsam ipsum! Reprehenderit, unde.
-                </p>
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis optio ut quam magnam nihil corrupti 
-                  exercitationem possimus sequi esse quaerat.
-                </p>
-                <ul>
-                  <li>lorem</li>
-                  <li>Ipsum</li>
-                  <li>Dolor</li>
-                  <li>consectetur</li>
-                </ul>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore dicta praesentium nostrum est, repellendus cumque?
-                </p>
+          <div class="p-4 bg-white border border-info rounded-5">
+            <div class="d-flex align-items-center flex-wrap flex-lg-nowrap">
+              <div class="m-4 d-flex align-items-center">
+                <img src="/src/assets/images/sheephead.jpg" class="img-fluid rounded-circle" alt="profile image">
+                <i class="fa-regular fa-comment-dots fa-2x p-2 mb-5"></i>
               </div>
-              <div>
-                <img src="/src/assets/images/spice.jpg" class="img-fluid rounded-3" alt="Responsive image">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, ea dicta numquam voluptates deleniti omnis porro nostrum amet 
-                  laboriosam voluptatibus esse delectus quod praesentium quidem expedita fugit aperiam incidunt ducimus?
-                </p>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, ea dicta numquam voluptates deleniti omnis porro nostrum amet 
-                  laboriosam voluptatibus esse delectus quod praesentium quidem expedita fugit aperiam incidunt ducimus?
-                </p>
-              </div>
+              <h1>My posts</h1>
             </div>
+            <div class="row" id="users-posts-container"></div>
             <div class="p-4 d-flex flex-wrap justify-content-between">
               <button class="btn btn-primary btn-md text-secondary m-1">Show more</button>
               <button class="btn btn-primary btn-md text-secondary m-1">To top</button>
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="m-2 p-4 bg-white border border-info rounded-5">
-            <div class="m-4 d-flex flex-wrap flex-lg-nowrap align-items-center">
-              <img src="/src/assets/images/example-user.jpg" class="img-fluid rounded-circle" alt="profile image">
-              <h1 class="p-2">Alex Smith</h1>
-            </div>
-            <div class="m-4">
-              <h2>About me</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, illo ducimus magni reiciendis suscipit reprehenderit</p>
-              <h2>Contacts</h2>
-              <div class="d-flex flex-wrap flex-sm-nowrap">
-                <a href="#" class="text-decoration-none">
-                  <figure class="figure d-flex">
-                    <figcaption class="figure-caption text-primary m-2">John</figcaption>
-                    <img src="/src/assets/images/forest-boy.jpg" class="text-bg-light figure-img img-fluid rounded-circle text-bg-primary">
-                  </figure>
-                </a>
-                <a href="#" class="text-decoration-none">
-                  <figure class="figure d-flex">
-                    <figcaption class="figure-caption text-primary m-2">
-                      <p class="h-1">Alice</p>
-                    </figcaption>
-                    <img src="/src/assets/images/hat-girl.jpg" class="text-bg-light figure-img img-fluid rounded-circle text-bg-primary">
-                  </figure>
-                </a>
-                <a href="#" class="text-decoration-none">
-                  <figure class="figure d-flex">
-                    <figcaption class="figure-caption text-primary m-2">Ylva</figcaption>
-                    <img src="/src/assets/images/forest-girl.jpg" class="text-bg-light figure-img img-fluid rounded-circle text-bg-primary">
-                  </figure>
-                </a>
+          <div class="col">
+            <div class="m-2 p-4 bg-white border border-info rounded-5">
+              <div class="m-4">
+                <h2>My Contacts</h2>
+                <div class="d-flex flex-wrap flex-sm-nowrap">
+                  <a href="#" class="text-decoration-none">
+                    <figure class="figure d-flex">
+                      <figcaption class="figure-caption text-primary m-2">John</figcaption>
+                      <img src="/src/assets/images/forest-boy.jpg" class="text-bg-light figure-img img-fluid rounded-circle text-bg-primary">
+                    </figure>
+                  </a>
+                  <a href="#" class="text-decoration-none">
+                    <figure class="figure d-flex">
+                      <figcaption class="figure-caption text-primary m-2">
+                        <p class="h-1">Alice</p>
+                      </figcaption>
+                      <img src="/src/assets/images/hat-girl.jpg" class="text-bg-light figure-img img-fluid rounded-circle text-bg-primary">
+                    </figure>
+                  </a>
+                  <a href="#" class="text-decoration-none">
+                    <figure class="figure d-flex">
+                      <figcaption class="figure-caption text-primary m-2">Ylva</figcaption>
+                      <img src="/src/assets/images/forest-girl.jpg" class="text-bg-light figure-img img-fluid rounded-circle text-bg-primary">
+                    </figure>
+                  </a>
+                </div>
+                <button class="btn btn-primary btn-md text-secondary">All contacts</button>
               </div>
-              <button class="btn btn-primary btn-md text-secondary">All contacts</button>
+            </div>
+            <div class="m-2 p-4 col bg-white border border-info rounded-5" id="post-form-profile">
+              <div class="m-4">
+                  <h2>Post to my wall</h2>
+              </div>
+              <form id="create-post">
+                <div class="m-4">
+                  <label for="title">Title</label>
+                  <input id="title" name="title" class="border rounded-1 w-100" type="text" required minlength="3">
+                </div>
+                <div class="m-4">
+                  <label for="post">Post</label>
+                  <textarea id="post" name="textarea" class="border rounded-1 w-100" required minlength="15"></textarea>
+                </div>
+                <div class="m-4">
+                  <label for="media">Image url</label>
+                  <input type="text" id="media" name="media" class="border rounded-1 w-100">
+                </div>
+                <button name="submitbtn" class="btn btn-primary btn-md text-secondary m-4 p-4">Submit</button>
+              </form>
             </div>
           </div>
-          <form class="m-2 p-4 bg-white border border-info rounded-5">
-            <h2 class="m-4">Post to wall</h2>
-            <div class="m-4">
-              <label for="title">Title</label>
-              <input id="title" class="border rounded-1 w-100" type="text" required minlength="3">
-            </div>
-            <div class="m-4">
-              <label for="post">Post</label>
-              <textarea id="post" class="border rounded-1 w-100" required minlength="15"></textarea>
-            </div>
-            <button class="btn btn-primary btn-md text-secondary m-4 p-4">Submit</button>
-          </form>
         </div>
       </div>
     </main>
