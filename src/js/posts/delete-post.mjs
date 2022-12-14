@@ -5,22 +5,34 @@ export function deletePost(deleteBtn, id, deleteModal) {
     const deleteUrl = `https://nf-api.onrender.com/api/v1/social/posts/${id}`;
 
     deleteBtn.addEventListener("click", (event) => {
+        
+        //{ MODAL COMPONMENTS
+        deleteModal.style.display = "block";
         console.log(deleteUrl);
         const token = storageLoad("accessToken");
 
-        deleteModal.innerHTML = `<h2>Delete this post?</h2>
-                                <p class="btn btn-primary btn-md text-secondary m-4 delete-confirm">Delete</p>
-                                <p class="btn btn-primary btn-md text-secondary m-4 delete-no">No</p>`;
+        const dialogText = document.createElement("h2");
+        dialogText.innerText = "Delete this post?"
+        deleteModal.appendChild(dialogText);
                                 
-                                const delNo = document.querySelector(".delete-no");
-                                delNo.addEventListener("click", () => {
-                                    deleteModal.style.display = "none";
-                                });
+        const noBtn = document.createElement("button");
+        const btnClasses = ["btn", "btn-primary", "btn-md", "text-secondary", "m-4"];
+        noBtn.classList.add(...btnClasses);
+        noBtn.innerText = "No";
+        deleteModal.appendChild(noBtn);
 
-        const delComfirm = document.querySelector(".delete-confirm");
-
-        deleteModal.style.display = "block";
-
+        const confirmBtn = document.createElement("button");
+        confirmBtn.classList.add(...btnClasses);
+        confirmBtn.innerText = "Delete";
+        confirmBtn.style.backgroundColor = "darkred";
+        deleteModal.appendChild(confirmBtn);
+        //}
+        const delNo = noBtn;
+        delNo.addEventListener("click", () => {
+            deleteModal.style.display = "none";
+        });
+                                
+        const delComfirm = confirmBtn;
         delComfirm.onclick = async function removePost() {
 
             try {
@@ -37,9 +49,8 @@ export function deletePost(deleteBtn, id, deleteModal) {
                 window.location.reload();
 
             } catch (error) {
-                console.log(error)
-            }
+                console.log(error);
+            };
         };
-        //removePost();
     });
 };
