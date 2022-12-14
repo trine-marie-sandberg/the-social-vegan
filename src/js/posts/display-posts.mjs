@@ -1,4 +1,5 @@
 import { updatePost } from "./update-post.mjs";
+import { deletePost } from "./delete-post.mjs";
 
 export async function displayPosts(getPosts, container, username) {
 
@@ -38,11 +39,19 @@ export async function displayPosts(getPosts, container, username) {
               const updateBtn = document.createElement("button");
               updateBtn.innerText = "Edit post";
               newPost.appendChild(updateBtn);
-              const btnClasses = ["btn", "btn-primary", "btn-md", "text-secondary", "m-4", "edit-post-btn"];
+              const btnClasses = ["btn", "btn-primary", "btn-md", "text-secondary", "m-4"];
               updateBtn.classList.add(...btnClasses);
+              updateBtn.classList.add("edit-post-btn");
 
               const editModal = document.createElement("div");
               newPost.appendChild(editModal);
+
+              const deleteBtn = document.createElement("button");
+              deleteBtn.innerText = "Delete Post";
+              newPost.appendChild(deleteBtn);
+              deleteBtn.classList.add(...btnClasses);
+              deleteBtn.classList.add("delete-post-btn");
+              deleteBtn.style.backgroundColor = "darkred";
 
               const postData = {
                 "title": posts[i].title,
@@ -53,6 +62,7 @@ export async function displayPosts(getPosts, container, username) {
               };
 
               updatePost(updateBtn, postData, editModal);
+              deletePost(deleteBtn, postData.id);
             };
         };
 
