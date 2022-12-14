@@ -4,7 +4,7 @@ export async function getPosts(url, userToken) {
 
         if (!localStorage.getItem("accessToken")) {
 
-            console.log("missing accessToken");
+            console.log("Warning: accessToken not found");
 
         } else {
 

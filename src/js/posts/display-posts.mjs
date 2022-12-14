@@ -1,13 +1,16 @@
 import { updatePost } from "./update-post.mjs";
 import { deletePost } from "./delete-post.mjs";
+import { logedOutDialog } from "./logedout-dialog.mjs";
 
-export async function displayPosts(getPosts, container, username) {
+export async function displayPosts(getPosts, container, username, token) {
 
     try {
 
         const posts = await getPosts;
 
-        for( let i = 0; i < posts.length; i++) {
+        if (token) {
+
+          for( let i = 0; i < posts.length; i++) {
 
             let image = posts[i].media;
             if(!image) {
@@ -36,6 +39,7 @@ export async function displayPosts(getPosts, container, username) {
             
             if(username === posts[i].author.name) {
 
+              //MODAL COMPONMENTS{
               const updateBtn = document.createElement("button");
               updateBtn.innerText = "Edit post";
               newPost.appendChild(updateBtn);
@@ -55,6 +59,7 @@ export async function displayPosts(getPosts, container, username) {
 
               const deleteModal = document.createElement("div");
               newPost.appendChild(deleteModal);
+              //}
 
               const postData = {
                 "title": posts[i].title,
@@ -67,6 +72,18 @@ export async function displayPosts(getPosts, container, username) {
               updatePost(updateBtn, postData, editModal);
               deletePost(deleteBtn, postData.id, deleteModal);
             };
+        };
+        } else {
+
+          const postFormHome = document.getElementById("post-form-home");
+          const postFormProfile = document.getElementById("post-form-profile");
+
+          if(postFormHome) {
+            postFormHome.innerHTML = logedOutDialog;
+          };
+          if(postFormProfile) {
+            postFormProfile.innerHTML = logedOutDialog;
+          }
         };
 
     } catch(error) {

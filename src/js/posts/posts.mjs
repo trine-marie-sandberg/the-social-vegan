@@ -17,7 +17,7 @@ const postsContainer = document.getElementById("posts-container");
 
 if(postsContainer) {
 
-    displayPosts(getPosts(allPostUrl, userToken), postsContainer, username);
+    displayPosts(getPosts(allPostUrl, userToken), postsContainer, username, userToken);
 };
 
 const postForm = document.getElementById("create-post");
@@ -28,7 +28,7 @@ const usersPostsContainer = document.getElementById("users-posts-container");
 
 if(usersPostsContainer) {
 
-    displayPosts(getPosts(userOnlyPostUrl, userToken), usersPostsContainer, username);
+    displayPosts(getPosts(userOnlyPostUrl, userToken), usersPostsContainer, username, userToken);
 };
 };
 
