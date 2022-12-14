@@ -2,6 +2,7 @@ import { storageLoad } from "../storage/localstorage.mjs";
 import { getPosts } from "./get-posts.mjs";
 import { displayPosts } from "./display-posts.mjs";
 import { createPost } from "./create-post.mjs";
+import { getSinglePost } from "./single-post.mjs";
 
 function postHandler() {
 
@@ -21,14 +22,21 @@ if(postsContainer) {
 };
 
 const postForm = document.getElementById("create-post");
-
-createPost(postForm, allPostUrl, userToken);
+if(postForm) {
+    createPost(postForm, allPostUrl, userToken);
+};
 
 const usersPostsContainer = document.getElementById("users-posts-container");
 
 if(usersPostsContainer) {
 
     displayPosts(getPosts(userOnlyPostUrl, userToken), usersPostsContainer, username, userToken);
+};
+
+const singlePostContainer = document.getElementById("single-post-container");
+
+if(singlePostContainer) {
+    getSinglePost(singlePostContainer, userToken);
 };
 };
 

@@ -30,6 +30,7 @@ export async function displayPosts(getPosts, container, username, token) {
                                       <h2 class="p-4">${posts[i].title}</h2>
                                    </div>  
                                     <div class="p-4">
+                                       <p><a href="/post/?id=${posts[i].id}" class="btn btn-primary btn-md text-secondary m-4">Go to post <i class="fa-solid fa-arrow-up-right-from-square"></i></a></p>
                                        <img src="${image}" class="img-fluid rounded-3 p-4" alt="Responsive image" style="max-height: 250px">
                                        <p class="p-4">${posts[i].body}</p>
                                     </div>
