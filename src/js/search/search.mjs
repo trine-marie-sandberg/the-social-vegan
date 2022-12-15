@@ -10,6 +10,7 @@ export async function searchHandler(searchBar) {
     const allPostUrl = "https://nf-api.onrender.com/api/v1/social/posts/?_author=true";
     const userToken = storageLoad("accessToken");
     postArray = await getPosts(allPostUrl, userToken);
+    console.log(postArray)
 
     //Asign search container
     const searchListContainer = searchContainer();

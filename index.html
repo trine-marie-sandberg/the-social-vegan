@@ -77,17 +77,22 @@
                 <label for="media">Image url</label>
                 <input type="text" id="media" name="media" class="border rounded-1 w-100">
               </div>
+              <div class="m-4">
+                <label for="tags">Tags</label>
+                <input type="text" id="tags" name="tags" class="border rounded-1 w-100">
+              </div>
               <button name="submitbtn" class="btn btn-primary btn-md text-secondary m-4 p-4">Submit</button>
             </form>
           </div>
           <div class="p-4 mt-4">
-            <h2>Filters</h2>
             <div>
               <div class="mt-4">
-                <form>
+                <form id="tags-form">
                   <label for="search-tags">Search in tags:</label>
-                  <input id="search-tags" type="search">
+                  <input id="search-tags" type="search" name="tagsearch">
                 </form>
+                <h3 class="">Post with tag:</h3>
+                <div id="tag-container"></div>
               </div>
               <div class="mt-4">
                 <form>

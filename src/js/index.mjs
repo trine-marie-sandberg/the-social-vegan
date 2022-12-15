@@ -5,6 +5,12 @@ import { filterHandler } from "./filter/filter.mjs";
 
 logout();
 logInOutIndicator();
+
 const search = document.getElementById("search");
 searchHandler(search);
-filterHandler();
+
+const tagsForm = document.getElementById("tags-form");
+const tagContainer = document.getElementById("tag-container")
+if(tagsForm) {
+    filterHandler(tagsForm, tagContainer);
+};
