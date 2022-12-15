@@ -1,6 +1,6 @@
 import { getPosts } from "/src/js/posts/get-posts.mjs"
 import { storageLoad } from "../storage/localstorage.mjs";
-import { searchContainer } from "./modal-componments.mjs";
+import { searchContainer, displayResults, closeSearch } from "./modal-componments.mjs";
 
 export async function searchHandler(searchBar) {
 
@@ -10,54 +10,58 @@ export async function searchHandler(searchBar) {
     const allPostUrl = "https://nf-api.onrender.com/api/v1/social/posts/?_author=true";
     const userToken = storageLoad("accessToken");
     postArray = await getPosts(allPostUrl, userToken);
+    console.log(postArray)
 
+    //Asign search container
     const searchListContainer = searchContainer();
     document.querySelector("header").appendChild(searchListContainer);
     searchListContainer.style.display = "none";
 
+    //Filter postArray after searchString
     searchBar.addEventListener("keyup", (event) => {
-        //FILTER POSTARRAY AFTER SEARCHBAR VALUE
+
         const searchCharacters = event.target.value;
         const searchString = searchCharacters.toLowerCase();
         
         let filteredPosts = postArray.filter(post => {
-            
-            return post.title.includes(searchString);
+                //👇 
+            const author = post.author.name.toLowerCase();
+            const includeAuthor = author.includes(searchString);
+                //👇
+            const title = post.title.toLowerCase();
+            const includeTitle = title.includes(searchString);
+                //👇
+                if(post.body) {
+                    const body = post.body.toLowerCase();
+                    const includeBody = body.includes(body);
+                };
+
+            return includeTitle;
         });
         
         searchListContainer.style.display = "block";
         postList(filteredPosts);
     });
     
-    //CLOSE SEARCH WHEN CLICK OUTSIDE
-    window.addEventListener('mouseup', function(event) { 
-        
-        if(event.target != searchBar && event.target.parentNode != searchBar){
-            
-            searchListContainer.style.display = 'none';
-        };
-    });
+    //Close searchModal
+    closeSearch(searchListContainer, searchBar);
     
-    //DISPLAY SEARCHRESULT
-    const postList = (postArray) => {
+    //Display results
+    const postList = (filteredPosts) => {
         
-        const htmlString = postArray.map((post) => {
+        const htmlString = filteredPosts.map((post) => {
 
+            let id = post.id;
             let title = post.title;
             let image = post.media;
-            
+            let author = post.author.name;
+
             if(!image) {
                 image = "/src/assets/images/wild-and-free.jpg";
             };
-            
-            return `<a href="/post/?id=${post.id}" class="text-decoration-none">
-                      <ul>
-                         <li class="list-style-none">
-                           <h2>${title}</h2>
-                           <image src="${image}" alt="" class="img-fluid" style="height: 80px;">
-                         </li>
-                       </ul>
-                    <a>`;
+
+            return displayResults(id, title, image, author);
+
         }).join("");
     
     searchListContainer.innerHTML = htmlString;
