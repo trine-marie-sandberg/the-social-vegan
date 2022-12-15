@@ -47,37 +47,59 @@
         <input id="search" class=" border rounded-4" type="text">
       </form>
     </header>
-    <main class="container">
+    <main class="container m-4">
       <div class="row">
-        <div class="m-2 p-4 col bg-white border border-info rounded-5" id="post-form-home">
-          <div class="m-4">
-            <div class="d-flex">
-              <h1>Welcome to The Social Vegan</h1>
-              <div class="align-self-end">
-                <img src="/src/assets/images/tsv-profile-img.jpg" alt="the social vegan profile image" class="image-fluid">
+        <div class="p-4 col-12 bg-white border border-info rounded-5 d-flex flex-wrap" id="post-form-home">
+          <div style="max-width: 700px;" class="p-4">
+            <div class="m-4">
+              <div class="d-flex">
+                <h1>Welcome to The Social Vegan</h1>
+                <div class="align-self-end">
+                  <img src="/src/assets/images/tsv-profile-img.jpg" alt="the social vegan profile image" class="image-fluid">
+                </div>
+              </div>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis autem facere doloremque 
+                exercitationem suscipit earum dolores.
+              </p>
+            </div>
+            <h2 class="m-4">Share something with others</h2>
+            <form id="create-post">
+              <div class="m-4">
+                <label for="title">Title</label>
+                <input id="title" name="title" class="border rounded-1 w-100" type="text" required minlength="3">
+              </div>
+              <div class="m-4">
+                <label for="post">Post</label>
+                <textarea id="post" name="textarea" class="border rounded-1 w-100" required minlength="15"></textarea>
+              </div>
+              <div class="m-4">
+                <label for="media">Image url</label>
+                <input type="text" id="media" name="media" class="border rounded-1 w-100">
+              </div>
+              <button name="submitbtn" class="btn btn-primary btn-md text-secondary m-4 p-4">Submit</button>
+            </form>
+          </div>
+          <div class="p-4 mt-4">
+            <h2>Filters</h2>
+            <div>
+              <div class="mt-4">
+                <form>
+                  <label for="search-tags">Search in tags:</label>
+                  <input id="search-tags" type="search">
+                </form>
+              </div>
+              <div class="mt-4">
+                <form>
+                  <label for="newest">Newest</label>
+                  <input type="radio" id="newest">
+                  <label for="oldest">Oldest</label>
+                  <input type="radio" id="oldest">
+                </form>
               </div>
             </div>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis autem facere doloremque 
-              exercitationem suscipit earum dolores.
-            </p>
           </div>
-          <h2 class="m-4">Share something with others</h2>
-          <form id="create-post">
-            <div class="m-4">
-              <label for="title">Title</label>
-              <input id="title" name="title" class="border rounded-1 w-100" type="text" required minlength="3">
-            </div>
-            <div class="m-4">
-              <label for="post">Post</label>
-              <textarea id="post" name="textarea" class="border rounded-1 w-100" required minlength="15"></textarea>
-            </div>
-            <div class="m-4">
-              <label for="media">Image url</label>
-              <input type="text" id="media" name="media" class="border rounded-1 w-100">
-            </div>
-            <button name="submitbtn" class="btn btn-primary btn-md text-secondary m-4 p-4">Submit</button>
-          </form>
+          <div class="" id="posts-container"></div>
         </div>
         <!-- <div class="p-2 col-12 col-lg-6">
           <div class="d-flex flex-column">
@@ -120,7 +142,6 @@
             </div>
           </div>
         </div> -->
-        <div class="row" id="posts-container"></div>
       </div>
     </main>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
