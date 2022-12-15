@@ -33,15 +33,12 @@ export async function searchHandler(searchBar) {
                 //👇
             const idArray = [post.id];
             let id = idArray.toString();
-            console.log(id)
             const includeId = id.includes(searchString);
-            console.log(includeId)
                 //👇
-            // const body = JSON.stringify(post.body);
-            // const includeBody = body.includes(body);
-            // console.log(includeBody)
+            const body = [post.body].toString();
+            const includeBody = body.includes(searchString);
 
-            return includeTitle + includeAuthor + includeId;
+            return includeTitle + includeAuthor + includeId + includeBody;
         });
         
         searchListContainer.style.display = "block";
