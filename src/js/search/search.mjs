@@ -31,15 +31,17 @@ export async function searchHandler(searchBar) {
             const title = post.title.toLowerCase();
             const includeTitle = title.includes(searchString);
                 //👇
-            const id = JSON.stringify(post.id);
-            const includeId = id.includes(id);
+            const idArray = [post.id];
+            let id = idArray.toString();
+            console.log(id)
+            const includeId = id.includes(searchString);
             console.log(includeId)
                 //👇
             // const body = JSON.stringify(post.body);
             // const includeBody = body.includes(body);
             // console.log(includeBody)
 
-            return includeTitle + includeAuthor;
+            return includeTitle + includeAuthor + includeId;
         });
         
         searchListContainer.style.display = "block";
