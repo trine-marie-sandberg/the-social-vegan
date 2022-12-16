@@ -51,15 +51,15 @@
     <main class="container">
       <div class="m-0 m-lg-1 p-4 bg-white border border-info rounded-5 row">
         <div class="col">
-          <form class="m-0 m-lg-1 p-4 bg-white border border-info rounded-5">
+          <form id="loginForm" class="m-0 m-lg-1 p-4 bg-white border border-info rounded-5">
             <h2 class="m-4">Sign in</h2>
             <div class="m-4">
               <label for="username">Username or email</label>
-              <input id="email-username" class="border rounded-1 w-100" type="text"  required minlength="5">
+              <input id="email-username" name="email" class="border rounded-1 w-100" type="email" required minlength="5">
             </div>
             <div class="m-4">
               <label for="password">Password</label>
-              <input id="password" type="password" class="border rounded-1 w-100" required minlength="10">
+              <input id="password" type="password" name="password" class="border rounded-1 w-100" required minlength="10">
             </div>
             <button type="submit" id="login" class="btn btn-primary btn-md text-secondary m-4 p-4">Login</button>
           </form>
