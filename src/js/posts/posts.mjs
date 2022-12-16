@@ -3,7 +3,7 @@ import { getPosts } from "./get-posts.mjs";
 import { displayPosts } from "./display-posts.mjs";
 import { createPost } from "./create-post.mjs";
 import { getSinglePost } from "./single-post.mjs";
-import { filterHandler, sortByNewOld } from "../filter/filter.mjs";
+import { tagHandler } from "../filter/tags.mjs";
 
 function postHandler() {
 
@@ -20,7 +20,6 @@ const userOnlyPostUrl = `https://nf-api.onrender.com/api/v1/social/profiles/${us
 if(postsContainer) {
 
     try {
-
         displayPosts(getPosts(allPostUrl, userToken), postsContainer, username, userToken);
 
     } catch(error) {
@@ -31,7 +30,7 @@ if(postsContainer) {
     const tagContainer = document.getElementById("tag-container");
     tagContainer.style.height = "400px";
     tagContainer.style.overflow = "scroll";
-    filterHandler(tagsForm, tagContainer);
+    tagHandler(tagsForm, tagContainer);
 };
 
 const postForm = document.getElementById("create-post");

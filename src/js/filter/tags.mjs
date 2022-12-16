@@ -1,9 +1,10 @@
 import { getPosts } from "../posts/get-posts.mjs";
 import { storageLoad } from "../storage/localstorage.mjs";
 import { postList } from "../search/map-and-display.mjs";
+import { displayPosts } from "../posts/display-posts.mjs";
 
 //Filter with tags (temporarily has its own box, can I include it in search somehow?)
-export function filterHandler(tagForm, container) {
+export function tagHandler(tagForm, container) {
 
     const userToken = storageLoad("accessToken")
 
@@ -26,27 +27,4 @@ export function filterHandler(tagForm, container) {
         };
         getTagedPosts();
     });
-};
-
-//filter by old/new date
-export function sortByNewOld() {
-
-    const btnNew = document.getElementById("btn-new");
-    const btnOld = document.getElementById("btn-old");
-
-    let filter = "";
-
-    btnNew.addEventListener("click", (event) => {
-        event.preventDefault();
-        filter = "&sort=title&sortOrder=asc";
-        //window.location.reload();
-    });
-
-    btnOld.addEventListener("click", (event) => {
-        event.preventDefault();
-        filter = "&sort=title&sortOrder=desc";
-        //window.location.reload();
-    })
-
-    return filter;
 };
