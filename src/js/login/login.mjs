@@ -1,9 +1,9 @@
 import { login } from "./login-handler.mjs";
-import { storageSave } from "../storage/localstorage.mjs";
+//import { storageSave } from "../storage/localstorage.mjs";
 
 const loginUser = document.querySelector("#login");
 const successMsg = document.querySelector("#login-success-msg");
-loginUser.addEventListener("click", function(event) {
+loginUser.addEventListener("click", async function(event) {
 
     try {
         
@@ -18,7 +18,7 @@ loginUser.addEventListener("click", function(event) {
 
         localStorage.setItem("user", JSON.stringify(loginData.email));
 
-        login(loginData);
+        await login(loginData);
 
         successMsg.innerHTML = `<div class= "d-flex align-items-start">
                                  <p class="px-3">Loging in</p>
