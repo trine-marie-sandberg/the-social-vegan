@@ -1,19 +1,18 @@
 import { login } from "./login-handler.mjs";
 //import { storageSave } from "../storage/localstorage.mjs";
 
-const loginUser = document.querySelector("#login");
+const loginForm = document.querySelector("#login");
 const successMsg = document.querySelector("#login-success-msg");
-loginUser.addEventListener("click", async function(event) {
+
+loginForm.addEventListener("submit", async function(event) {
+
+    event.preventDefault();
 
     try {
-        
-        event.preventDefault();
-        const email = document.querySelector("#email-username");
-        const password = document.querySelector("#password");
 
         const loginData = {
-            email: email.value,
-            password: password.value,
+            email: event.target.email.value,
+            password: event.target.password.value,
         };
 
         localStorage.setItem("user", JSON.stringify(loginData.email));
@@ -31,6 +30,6 @@ loginUser.addEventListener("click", async function(event) {
         
     } catch(error) {
 
-        console.log(error)
+        alert("There was a problem logging you in" + error)
     };
 });

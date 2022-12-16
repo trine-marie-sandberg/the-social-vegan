@@ -51,17 +51,17 @@
     <main class="container">
       <div class="m-0 m-lg-1 p-4 bg-white border border-info rounded-5 row">
         <div class="col">
-          <form class="m-0 m-lg-1 p-4 bg-white border border-info rounded-5">
+          <form class="m-0 m-lg-1 p-4 bg-white border border-info rounded-5" id="login">
             <h2 class="m-4">Sign in</h2>
             <div class="m-4">
-              <label for="username">Username or email</label>
-              <input id="email-username" class="border rounded-1 w-100" type="text"  required minlength="5">
+              <label for="username">Your user email</label>
+              <input id="email-username" class="border rounded-1 w-100" type="text"  required minlength="5" name="email">
             </div>
             <div class="m-4">
               <label for="password">Password</label>
-              <input id="password" type="password" class="border rounded-1 w-100" required minlength="10">
+              <input id="password" type="password" class="border rounded-1 w-100" name="password">
             </div>
-            <button type="submit" id="login" class="btn btn-primary btn-md text-secondary m-4 p-4">Login</button>
+            <button type="submit" class="btn btn-primary btn-md text-secondary m-4 p-4">Login</button>
           </form>
           <div class="m-4">
             <h2>Don't have an account?</h2>
