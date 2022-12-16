@@ -49,7 +49,7 @@
     </header>
     <main class="container m-4">
       <div class="row">
-        <div class="p-4 col-12 bg-white border border-info rounded-5 d-flex flex-wrap" id="post-form-home">
+        <div class="p-4 bg-white border border-info rounded-5">
           <div style="max-width: 700px;" class="p-4">
             <div class="m-4">
               <div class="d-flex">
@@ -86,21 +86,16 @@
           </div>
           <div class="p-4 mt-4">
             <div>
-              <div class="mt-4">
-                <form id="tags-form">
+              <div>
+                <form id="tags-form" class="mb-2">
                   <label for="search-tags">Search in tags:</label>
                   <input id="search-tags" type="search" name="tagsearch">
                 </form>
-                <h3 class="">Post with tag:</h3>
-                <div id="tag-container"></div>
+                <div id="tag-container" class="bg-primary"></div>
               </div>
-              <div class="mt-4">
-                <form>
-                  <label for="newest">Newest</label>
-                  <input type="radio" id="newest">
-                  <label for="oldest">Oldest</label>
-                  <input type="radio" id="oldest">
-                </form>
+              <div class="mt-4 d-flex">
+                <button class="btn btn-primary btn-md text-secondary m-4 p-4" id="btn-new">New posts first</button>
+                <button class="btn btn-primary btn-md text-secondary m-4 p-4" id="btn-old">Old posts first</button>
               </div>
             </div>
           </div>

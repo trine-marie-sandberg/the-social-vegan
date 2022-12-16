@@ -8,9 +8,3 @@ logInOutIndicator();
 
 const search = document.getElementById("search");
 searchHandler(search);
-
-const tagsForm = document.getElementById("tags-form");
-const tagContainer = document.getElementById("tag-container")
-if(tagsForm) {
-    filterHandler(tagsForm, tagContainer);
-};
