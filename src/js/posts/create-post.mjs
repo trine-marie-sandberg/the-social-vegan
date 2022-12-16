@@ -8,6 +8,7 @@ export function createPost(form, url, token) {
             "title": form.title.value,
             "body": form.textarea.value,
             "media": form.media.value,
+            "tags": [form.tags.value],
         };
     
         const postData = {

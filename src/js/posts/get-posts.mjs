@@ -21,7 +21,6 @@ export async function getPosts(url, userToken) {
 
             const json = await response.json();
             const postArray = json;
-            //console.log(postArray)
             return postArray;
         };
         
