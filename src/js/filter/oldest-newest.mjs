@@ -16,6 +16,7 @@ function sortByNewOld(postsContainer, username, userToken) {
 
     btnNew.addEventListener("click", (event) => {
         event.preventDefault();
+        postsContainer.innerHTML = "";
         filter = "&sort=title&sortOrder=asc";
         const postOrder = filter;
         let allPostUrl = `https://nf-api.onrender.com/api/v1/social/posts/?_author=true${postOrder}`;
@@ -25,10 +26,19 @@ function sortByNewOld(postsContainer, username, userToken) {
 
     btnOld.addEventListener("click", (event) => {
         event.preventDefault();
+        postsContainer.innerHTML = "";
         filter = "&sort=title&sortOrder=desc";
         const postOrder = filter;
         let allPostUrl = `https://nf-api.onrender.com/api/v1/social/posts/?_author=true${postOrder}`;
-        displayPosts(getPosts(allPostUrl, userToken), postsContainer, username, userToken);
+        async function render() {
+
+            try {
+                await displayPosts(getPosts(allPostUrl, userToken), postsContainer, username, userToken);
+            } catch(error) {
+                console.log(error)
+            }
+        }
+        render()
         console.log(allPostUrl);
     });
 
