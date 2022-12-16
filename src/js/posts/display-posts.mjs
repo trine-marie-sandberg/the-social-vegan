@@ -79,11 +79,15 @@ export async function displayPosts(getPosts, container, username, token) {
           const postFormHome = document.getElementById("post-form-home");
           const postFormProfile = document.getElementById("post-form-profile");
 
+          const postFormId = document.getElementById("create-post");
+
           if(postFormHome) {
             postFormHome.innerHTML = logedOutDialog;
+            postFormId.style.display = "none";
           };
           if(postFormProfile) {
             postFormProfile.innerHTML = logedOutDialog;
+            postFormId.style.display = "none";
           }
         };
 
