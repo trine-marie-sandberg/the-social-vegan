@@ -12,19 +12,21 @@ function sortByNewOld(postsContainer, username, userToken) {
 
     const btnNew = document.getElementById("btn-new");
     const btnOld = document.getElementById("btn-old");
+
     let filter = "";
 
     btnNew.addEventListener("click", (event) => {
+
         event.preventDefault();
         postsContainer.innerHTML = "";
         filter = "&sort=title&sortOrder=asc";
         const postOrder = filter;
         let allPostUrl = `https://nf-api.onrender.com/api/v1/social/posts/?_author=true${postOrder}`;
         displayPosts(getPosts(allPostUrl, userToken), postsContainer, username, userToken);
-        console.log(allPostUrl);
     });
 
     btnOld.addEventListener("click", (event) => {
+
         event.preventDefault();
         postsContainer.innerHTML = "";
         filter = "&sort=title&sortOrder=desc";
@@ -39,10 +41,7 @@ function sortByNewOld(postsContainer, username, userToken) {
             }
         }
         render()
-        console.log(allPostUrl);
     });
-
-    //return filter;
 };
 
 sortByNewOld(postsContainer, username, userToken);
