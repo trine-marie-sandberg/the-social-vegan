@@ -90,20 +90,22 @@
               <img src="/src/assets/images/be-nice.jpg" alt="Humans holding a dog and a cat, facing each other" class="img img-fluid rounded-4">
             </div>
           </div>
+          <button id="show-tags" class="btn btn-white text-primary">
+            <p class="p-2 text-decoration-underline">Show tags </p><i class="fa-solid fa-tag display-6"></i>
+          </button>
+          <button id="close-tags" class="btn btn-white text-primary">
+            <p class="p-2 text-decoration-underline">Close tags </p><i class="fa-solid fa-tag display-6"></i>
+          </button>
           <div class="p-4 mt-4" style="width: 100%;">
-            <div>
-              <div>
-                <form id="tags-form" class="mb-2">
-                  <label for="search-tags">Get post by tag (one tag at a time):</label>
-                  <input id="search-tags" type="search" name="tagsearch" class="rounded-2 border-info">
-                  <p>Popular tags: test, tag, tags</p>
-                </form>
-                <div id="tag-container" class="bg-primary"></div>
-              </div>
-              <div class="mt-4 d-flex">
-                <p class="btn btn-primary btn-md text-secondary m-4 p-2" id="btn-new">New posts first</p>
-                <p class="btn btn-primary btn-md text-secondary m-4 p-2" id="btn-old">Old posts first</p>
-              </div>
+            <form id="tags-form" class="mb-2" style="display: none;">
+              <label for="search-tags">Get post by tag (one tag at a time):</label>
+              <input id="search-tags" type="search" name="tagsearch" class="rounded-2 border-info">
+              <p>Popular tags: test, tag, tags</p>
+            </form>
+            <div id="tag-container" class="bg-primary" style="display: none;"></div>
+            <div class="mt-4 d-flex">
+              <p class="btn btn-primary btn-md text-secondary m-4 p-2" id="btn-new">New posts first</p>
+              <p class="btn btn-primary btn-md text-secondary m-4 p-2" id="btn-old">Old posts first</p>
             </div>
           </div>
           <div id="posts-container">
