@@ -28,8 +28,9 @@ if(postsContainer) {
 
     const tagsForm = document.getElementById("tags-form");
     const tagContainer = document.getElementById("tag-container");
-    tagContainer.style.height = "400px";
-    tagContainer.style.overflow = "scroll";
+    tagContainer.style.height = "200px";
+    tagContainer.style.overflowY = "scroll";
+    tagContainer.style.overflowX = "hide";
     tagHandler(tagsForm, tagContainer);
 };
 

@@ -45,52 +45,58 @@
         <label for="search">
           <p>Search <i class="fa-solid fa-arrow-right"></i></p>
         </label>
-        <input id="search" class=" border rounded-4" type="text">
+        <input id="search" class=" border rounded-2" type="text">
       </form>
     </header>
     <main class="container m-4">
       <div class="row content-container">
-        <div class="p-4 bg-white border border-info rounded-5">
-          <div style="max-width: 700px;" class="p-4">
-            <div class="m-4" id="post-form-home">
-              <div class="d-flex">
+        <div class="bg-white border border-info rounded-5 p-4">
+          <div class="d-flex flex-wrap flex-lg-nowrap">
+            <div style="max-width: 600px;">
+              <div class="m-4" id="post-form-home">
                 <h1>Welcome to The Social Vegan</h1>
-                <div class="align-self-end">
-                  <img src="/src/assets/images/tsv-profile-img.jpg" alt="the social vegan profile image" class="image-fluid">
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis autem facere doloremque 
+                  exercitationem suscipit earum dolores.
+                </p>
+              </div>
+              <h2 class="m-4 display-6">What's on your mind?</h2>
+              <form id="create-post">
+                <div class="m-4">
+                  <label for="title">Title</label>
+                  <input id="title" name="title" class="border rounded-1 w-100" type="text" required minlength="3">
                 </div>
-              </div>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis autem facere doloremque 
-                exercitationem suscipit earum dolores.
-              </p>
+                <div class="m-4">
+                  <label for="post">Post</label>
+                  <textarea id="post" name="textarea" class="border rounded-1 w-100" required minlength="15"></textarea>
+                </div>
+                <div class="m-4">
+                  <label for="media">Image url</label>
+                  <input type="text" id="media" name="media" class="border rounded-1 w-100">
+                </div>
+                <div class="m-4">
+                  <label for="tags">Tags</label>
+                  <input type="text" id="tags" name="tags" class="border rounded-1 w-100">
+                </div>
+                <button name="submitbtn" class="btn btn-primary btn-md text-secondary m-4 p-4">Submit</button>
+              </form>
             </div>
-            <h2 class="m-4">Share something with others</h2>
-            <form id="create-post">
-              <div class="m-4">
-                <label for="title">Title</label>
-                <input id="title" name="title" class="border rounded-1 w-100" type="text" required minlength="3">
-              </div>
-              <div class="m-4">
-                <label for="post">Post</label>
-                <textarea id="post" name="textarea" class="border rounded-1 w-100" required minlength="15"></textarea>
-              </div>
-              <div class="m-4">
-                <label for="media">Image url</label>
-                <input type="text" id="media" name="media" class="border rounded-1 w-100">
-              </div>
-              <div class="m-4">
-                <label for="tags">Tags</label>
-                <input type="text" id="tags" name="tags" class="border rounded-1 w-100">
-              </div>
-              <button name="submitbtn" class="btn btn-primary btn-md text-secondary m-4 p-4">Submit</button>
-            </form>
+            <div class="p-4">
+              <h2>Rules:</h2>
+              <p>1. Be nice to each other</p>
+              <p>2. Don't be mean</p>
+              <p>3. No meat promotions</p>
+              <p>4. Have fun.</p>
+              <img src="/src/assets/images/be-nice.jpg" alt="Humans holding a dog and a cat, facing each other" class="img img-fluid rounded-4">
+            </div>
           </div>
-          <div class="p-4 mt-4">
+          <div class="p-4 mt-4" style="width: 100%;">
             <div>
               <div>
                 <form id="tags-form" class="mb-2">
-                  <label for="search-tags">Search in tags:</label>
-                  <input id="search-tags" type="search" name="tagsearch">
+                  <label for="search-tags">Get post by tag (one tag at a time):</label>
+                  <input id="search-tags" type="search" name="tagsearch" class="rounded-2 border-info">
+                  <p>Popular tags: test, tag, tags</p>
                 </form>
                 <div id="tag-container" class="bg-primary"></div>
               </div>
