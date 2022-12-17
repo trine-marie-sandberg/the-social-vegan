@@ -21,7 +21,7 @@ export async function displayPosts(getPosts, container, username, token) {
           setTimeout(() => {
             loader.style.display = "none";
           }, 500);
-          
+
           for( let i = 0; i < posts.length; i++) {
 
             let image = posts[i].media;
@@ -37,7 +37,7 @@ export async function displayPosts(getPosts, container, username, token) {
                                    <div>
                                       <figure class="figure p-4 d-flex">
                                         <figcaption class="figure-caption text-primary m-2">${posts[i].id}</figcaption>
-                                        <img src="/src/assets/images/sheephead.jpg" class="text-bg-light figure-img img-fluid rounded-circle text-bg-primary">
+                                        <img src="/src/assets/images/avatar-plaseholder.jpg" class="text-bg-light figure-img img-fluid rounded-circle text-bg-primary">
                                       </figure>
                                         <h2 class="p-4">${posts[i].title}</h2>
                                       </div>  
