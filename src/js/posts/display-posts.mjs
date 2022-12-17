@@ -1,6 +1,6 @@
 import { updatePost } from "./update-post.mjs";
 import { deletePost } from "./delete-post.mjs";
-import { logedOutDialog } from "./logedout-dialog.mjs";
+import { logedOutDialog, logedOutDialog2 } from "./logedout-dialog.mjs";
 
 export async function displayPosts(getPosts, container, username, token) {
 
@@ -99,14 +99,13 @@ export async function displayPosts(getPosts, container, username, token) {
           const postFormProfile = document.getElementById("post-form-profile");
 
           const postFormId = document.getElementById("create-post");
+          const contentContainer = document.querySelector(".content-container");
 
           if(postFormHome) {
-            postFormHome.innerHTML = logedOutDialog;
-            postFormId.style.display = "none";
+            contentContainer.innerHTML = logedOutDialog;
           };
           if(postFormProfile) {
-            postFormProfile.innerHTML = logedOutDialog;
-            postFormId.style.display = "none";
+            contentContainer.innerHTML = logedOutDialog2;
           }
         };
 

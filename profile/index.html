@@ -48,7 +48,7 @@
       </form>
     </header>
     <main class="container m-4">
-      <div class="row d-flex flex-column flex-lg-row">
+      <div class="row d-flex flex-column flex-lg-row content-container">
         <div class="col col-xl-8">
           <div class="p-4 bg-white border border-info rounded-5">
             <div class="d-flex align-items-center flex-wrap flex-lg-nowrap">
@@ -62,6 +62,30 @@
           </div>
         </div>
           <div class="col">
+            <div class="p-4 col bg-white border border-info rounded-5" id="post-form-profile">
+              <div class="m-4">
+                  <h2>Create new post</h2>
+              </div>
+              <form id="create-post">
+                <div class="m-4">
+                  <label for="title">Title</label>
+                  <input id="title" name="title" class="border rounded-1 w-100" type="text" required minlength="3">
+                </div>
+                <div class="m-4">
+                  <label for="post">Post</label>
+                  <textarea id="post" name="textarea" class="border rounded-1 w-100" required minlength="15"></textarea>
+                </div>
+                <div class="m-4">
+                  <label for="media">Image url</label>
+                  <input type="text" id="media" name="media" class="border rounded-1 w-100">
+                </div>
+                <div class="m-4">
+                  <label for="tags">Tags</label>
+                  <input type="text" id="tags" name="tags" class="border rounded-1 w-100">
+                </div>
+                <button name="submitbtn" class="btn btn-primary btn-md text-secondary m-4 p-4">Submit</button>
+              </form>
+            </div>
             <div class="m-2 p-4 bg-white border border-info rounded-5">
               <div class="m-4">
                 <h2>My Contacts</h2>
@@ -89,30 +113,6 @@
                 </div>
                 <button class="btn btn-primary btn-md text-secondary">All contacts</button>
               </div>
-            </div>
-            <div class="m-2 p-4 col bg-white border border-info rounded-5" id="post-form-profile">
-              <div class="m-4">
-                  <h2>Create new post</h2>
-              </div>
-              <form id="create-post">
-                <div class="m-4">
-                  <label for="title">Title</label>
-                  <input id="title" name="title" class="border rounded-1 w-100" type="text" required minlength="3">
-                </div>
-                <div class="m-4">
-                  <label for="post">Post</label>
-                  <textarea id="post" name="textarea" class="border rounded-1 w-100" required minlength="15"></textarea>
-                </div>
-                <div class="m-4">
-                  <label for="media">Image url</label>
-                  <input type="text" id="media" name="media" class="border rounded-1 w-100">
-                </div>
-                <div class="m-4">
-                  <label for="tags">Tags</label>
-                  <input type="text" id="tags" name="tags" class="border rounded-1 w-100">
-                </div>
-                <button name="submitbtn" class="btn btn-primary btn-md text-secondary m-4 p-4">Submit</button>
-              </form>
             </div>
           </div>
         </div>
