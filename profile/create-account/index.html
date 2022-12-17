@@ -49,19 +49,19 @@
     <main class="container">
       <div class="m-0 m-lg-1 p-4 bg-white border border-info rounded-5 row">
         <div class="col">
-          <form class="m-0 m-lg-1 p-4 bg-white border border-info rounded-5" action="profile.html">
+          <form class="m-0 m-lg-1 p-4 bg-white border border-info rounded-5" action="/profile/" id="create-account-form">
             <h2 class="m-4">Create Account</h2>
             <div class="m-4">
               <label for="username">Username</label>
-              <input id="username" class="border rounded-1 w-100" type="text">
+              <input id="username" name="username" class="border rounded-1 w-100" type="text">
             </div>
             <div class="m-4">
               <label for="email">Email</label>
-              <input id="email" class="border rounded-1 w-100" type="email">
+              <input id="email" name="email" class="border rounded-1 w-100" type="email">
             </div>
             <div class="m-4">
               <label for="password">Password</label>
-              <input id="password" type="password" class="border rounded-1 w-100" required minlength="10">
+              <input id="password" name="password" type="password" class="border rounded-1 w-100" required minlength="10">
             </div>
             <div class="m-4">
                 <label for="password-rep">Repeat Password</label>
