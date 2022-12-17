@@ -12,12 +12,16 @@ export async function displayPosts(getPosts, container, username, token) {
 
           const loader = document.createElement("div");
           loader.innerHTML = `<div class="d-flex align-items-start">
-                                <p class="px-3">Loging in</p>
+                                <p class="px-3">Loading posts</p>
                                 <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                               </div>`;
 
           container.appendChild(loader);
 
+          setTimeout(() => {
+            loader.style.display = "none";
+          }, 500);
+          
           for( let i = 0; i < posts.length; i++) {
 
             let image = posts[i].media;
@@ -46,10 +50,6 @@ export async function displayPosts(getPosts, container, username, token) {
                                  </div>`;
           
           container.appendChild(newPost);
-
-            setTimeout(() => {
-              loader.style.display = "none";
-            }, 500);
             
             if(username === posts[i].author.name) {
 
