@@ -29,15 +29,21 @@ export async function displayPosts(getPosts, container, username, token) {
                 image = "/src/assets/images/wild-and-free.jpg";
             };
 
+            let avatar = posts[i].author.avatar;
+ 
+            if(!avatar) {
+              avatar = "/src/assets/images/avatar-plaseholder.jpg";
+            };
+
             const newPost = document.createElement("div");
-            const classesToAdd = ["bg-white", "m-2", "border", "border-info", "rounded-5"];
+            const classesToAdd = ["bg-white", "m-2", "border-top", "border-info"];
             newPost.classList.add(...classesToAdd);
 
             newPost.innerHTML = `<div class="d-flex flex-wrap flex-lg-nowrap flex-xl-nowrap m-4">
                                    <div>
                                       <figure class="figure p-4 d-flex">
-                                        <figcaption class="figure-caption text-primary m-2">${posts[i].id}</figcaption>
-                                        <img src="/src/assets/images/avatar-plaseholder.jpg" class="text-bg-light figure-img img-fluid rounded-circle text-bg-primary">
+                                        <figcaption class="figure-caption text-primary m-2">${posts[i].author.name}</figcaption>
+                                        <img src="${avatar}" class="text-bg-light figure-img rounded-circle text-bg-primary" id="avatar-img" width="60px" height="60px">
                                       </figure>
                                         <h2 class="p-4">${posts[i].title}</h2>
                                       </div>  
@@ -48,7 +54,7 @@ export async function displayPosts(getPosts, container, username, token) {
                                       </div>
                                    </div>
                                  </div>`;
-          
+
           container.appendChild(newPost);
             
             if(username === posts[i].author.name) {
