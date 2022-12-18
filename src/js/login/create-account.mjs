@@ -30,6 +30,13 @@ form.addEventListener("submit", function(event) {
         window.location.replace("/profile/");
     };
 
-    postUserData();
+    try {
+        postUserData();
+    } catch(error) {
+
+        alert("There was a problem creating your account" + error);
+    };
+
+    
 });
 

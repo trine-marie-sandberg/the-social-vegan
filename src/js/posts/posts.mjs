@@ -14,7 +14,12 @@ let allPostUrl = `https://nf-api.onrender.com/api/v1/social/posts/?_author=true`
 const userToken = storageLoad("accessToken");
 
 const user = storageLoad("profile");
-const username = user.name;
+let username;
+if(storageLoad("profile")) {
+    username = user.name;
+};
+
+
 const userOnlyPostUrl = `https://nf-api.onrender.com/api/v1/social/profiles/${username}/posts/?_author=true`;
 
 if(postsContainer) {

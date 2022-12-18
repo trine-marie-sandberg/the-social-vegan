@@ -1,5 +1,4 @@
 import { login } from "./login-handler.mjs";
-//import { storageSave } from "../storage/localstorage.mjs";
 
 const loginForm = document.querySelector("#login");
 const successMsg = document.querySelector("#login-success-msg");
@@ -30,6 +29,6 @@ loginForm.addEventListener("submit", async function(event) {
         
     } catch(error) {
 
-        alert("There was a problem logging you in" + error)
+        alert("There was a problem logging you in" + error);
     };
 });
