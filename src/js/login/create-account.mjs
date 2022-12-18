@@ -1,7 +1,9 @@
 import { userData } from "./utils/user-data.mjs";
+import { login } from "./login-handler.mjs";
 
 const createAccount = document.querySelector("#submit-create");
-createAccount.addEventListener("click", function(event) {
+const form = document.getElementById("create-account-form");
+form.addEventListener("submit", function(event) {
 
     const user = userData(event);
     console.log(user)
@@ -18,9 +20,23 @@ createAccount.addEventListener("click", function(event) {
 
         const response = await fetch("https://nf-api.onrender.com/api/v1/social/auth/register", postData);
         const json = await response.json();
-        console.log(json)
+        console.log(json);
+
+        const loginData = {
+            email: user.email,
+            password: user.password,
+        };
+        await login(loginData);
+        window.location.replace("/profile/");
     };
 
-    postUserData();
+    try {
+        postUserData();
+    } catch(error) {
+
+        alert("There was a problem creating your account" + error);
+    };
+
+    
 });
 

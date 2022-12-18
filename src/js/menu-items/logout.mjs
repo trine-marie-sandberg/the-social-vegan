@@ -8,7 +8,11 @@ export function logout() {
             
             event.preventDefault();
             localStorage.removeItem("accessToken");
+            localStorage.removeItem("user");
+            localStorage.removeItem("profile");
             loggoutBtn.innerHTML = "Login";
+
+            window.location.reload();
         };  
     });
 };

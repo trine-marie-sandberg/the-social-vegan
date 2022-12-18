@@ -1,3 +1,4 @@
+import { storageSave } from "../storage/localstorage.mjs";
 export async function login(userToLogin) {
 
     //Login endpoint
@@ -14,13 +15,12 @@ export async function login(userToLogin) {
 
     try {
 
-        //fetch postData
         const response = await fetch(loginUrl, postData);
-        const json = await response.json();
-        console.log(json);
-        //Get accesstoken and store it
-        const token = json.accessToken;
-        localStorage.setItem("accessToken", token);
+        //const json = await response.json();
+
+        const { accessToken, ...profile } = await response.json();
+        storageSave("accessToken", accessToken);
+        storageSave("profile", profile);
 
     } catch (error) {
         console.log(error);

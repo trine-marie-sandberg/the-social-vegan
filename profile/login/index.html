@@ -8,7 +8,8 @@
     <title>TSV Login</title>
     <link rel="stylesheet" href="/dist/css/main.css">
     <link rel="stylesheet" href="/src/assets/fontawsome/css/all.css">
-    <script type="module" src="/src/js/login/create-account.mjs"></script>
+    <script type="module" src="/src/js/login/login.mjs"></script>
+    <script type="module" src="/src/js/index.mjs"></script>
 </head>
 <body>
     <header class="text-bg-primary">
@@ -22,13 +23,13 @@
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="nav navbar-expand-lg rounded">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="profile.html">Profile</a>
+                    <a class="nav-link" href="/profile">Profile</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="login.html">Login</a>
+                    <a class="nav-link" id="log-in-out" href="/profile/login">Login</a>
                   </li>
                 </ul>
               </div>
@@ -38,47 +39,40 @@
             </div>
           </div>
         </div>
+        <div class="row m-0 p-2" id="login-success-msg"></div>
       </div>
       <form class="container-fluid p-4 text-bg-light">
         <label for="search">
           <p>Search <i class="fa-solid fa-arrow-right"></i></p>
         </label>
-        <input id="search" class=" border rounded-4" type="text">
+        <input id="search" class=" border rounded-2" type="text">
       </form>
     </header>
     <main class="container">
       <div class="m-0 m-lg-1 p-4 bg-white border border-info rounded-5 row">
         <div class="col">
-          <form class="m-0 m-lg-1 p-4 bg-white border border-info rounded-5" action="profile.html">
-            <h2 class="m-4">Create Account</h2>
+          <form class="m-0 m-lg-1 p-4 bg-white border border-info rounded-5" id="login">
+            <h2 class="m-4">Sign in</h2>
             <div class="m-4">
-              <label for="username">Username</label>
-              <input id="username" class="border rounded-1 w-100" type="text">
-            </div>
-            <div class="m-4">
-              <label for="email">Email</label>
-              <input id="email" class="border rounded-1 w-100" type="email">
+              <label for="username">Your user email</label>
+              <input id="email-username" class="border rounded-1 w-100" type="text" name="email" required title="Please submit your user email.">
             </div>
             <div class="m-4">
               <label for="password">Password</label>
-              <input id="password" type="password" class="border rounded-1 w-100" required minlength="10">
+              <input id="password" type="password" class="border rounded-1 w-100" name="password" required title="Please submit a valid password.">
             </div>
-            <div class="m-4">
-                <label for="password-rep">Repeat Password</label>
-                <input id="password-rep" type="password" class="border rounded-1 w-100" required minlength="10">
-              </div>
-            <button type="submit" id="submit-create" class="btn btn-primary btn-md text-secondary m-4 p-4">Submit</button>
+            <button type="submit" class="btn btn-primary btn-md text-secondary m-4 p-4">Login</button>
           </form>
           <div class="m-4">
-            <h2>Already have an account?</h2>
-            <a href="login.html">
-              <p class="btn btn-primary btn-md text-secondary">To Login Page</p>
+            <h2>Don't have an account?</h2>
+            <a href="/profile/create-account">
+              <p class="btn btn-primary btn-md text-secondary">Create account</p>
             </a>
           </div>
         </div>
         <div class="col-lg">
-            <img src="/src/assets/images/plant-based.jpg" alt="A sign saying plant based" class="img-fluid rounded-5 h-75">
-        </div>
+          <img src="/src/assets/images/plant-based.jpg" alt="A sign saying plant based" class="img-fluid rounded-5 h-75">
+      </div>
       </div>
     </main>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

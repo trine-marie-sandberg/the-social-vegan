@@ -1,33 +1,34 @@
 import { login } from "./login-handler.mjs";
 
-const loginUser = document.querySelector("#login");
+const loginForm = document.querySelector("#login");
 const successMsg = document.querySelector("#login-success-msg");
-loginUser.addEventListener("click", function(event) {
+
+loginForm.addEventListener("submit", async function(event) {
+
+    event.preventDefault();
 
     try {
-        
-        event.preventDefault();
-        const email = document.querySelector("#email-username");
-        const password = document.querySelector("#password");
 
         const loginData = {
-            email: email.value,
-            password: password.value,
+            email: event.target.email.value,
+            password: event.target.password.value,
         };
 
-        login(loginData);
+        localStorage.setItem("user", JSON.stringify(loginData.email));
+
+        await login(loginData);
 
         successMsg.innerHTML = `<div class= "d-flex align-items-start">
-                                 <p class="px-3">Login successful</p>
+                                 <p class="px-3">Loging in</p>
                                  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                                 </div>`;
 
         setTimeout(() => {
-            window.location.replace("profile.html");
+            window.location.replace("/profile/");
         }, 500);
         
     } catch(error) {
 
-        console.log(error)
+        alert("There was a problem logging you in" + error);
     };
 });

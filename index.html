@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="/dist/css/main.css">
     <link rel="stylesheet" href="/src/assets/fontawsome/css/all.css">
     <script type="module" src="/src/js/index.mjs"></script>
+    <script type="module" src="/src/js/posts/posts.mjs"></script>
+    <script type="module" src="/src/js/filter/oldest-newest.mjs"></script>
 </head>
 <body>
     <header class="text-bg-primary">
@@ -25,10 +27,10 @@
                     <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="profile.html">Profile</a>
+                    <a class="nav-link" href="/profile">Profile</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" id="log-in-out" href="login.html">Login</a>
+                    <a class="nav-link" id="log-in-out" href="/profile/login/">Login</a>
                   </li>
                 </ul>
               </div>
@@ -43,76 +45,70 @@
         <label for="search">
           <p>Search <i class="fa-solid fa-arrow-right"></i></p>
         </label>
-        <input id="search" class=" border rounded-4" type="text">
+        <input id="search" class=" border rounded-2" type="text">
       </form>
     </header>
-    <main class="container">
-      <div class="row">
-        <form class="m-2 p-4 col bg-white border border-info rounded-5">
-          <div class="m-4">
-            <div class="d-flex">
-              <h1>Welcome to The Social Vegan</h1>
-              <div class="align-self-end">
-                <img src="/src/assets/images/tsv-profile-img.jpg" alt="the social vegan profile image" class="image-fluid">
-              </div>
-            </div>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis autem facere doloremque 
-              exercitationem suscipit earum dolores cumque fuga distinctio dolorum, laborum, deserunt reprehenderit, 
-              voluptate beatae delectus quisquam enim illum! In quas quos vitae, animi odit rerum quia reprehenderit est?
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae enim, repellendus corrupti quibusdam dignissimos id.
-            </p>
-          </div>
-          <h2 class="m-4">Share something with others</h2>
-          <div class="m-4">
-            <label for="title">Title</label>
-            <input id="title" class="border rounded-1 w-100" type="text" required minlength="3">
-          </div>
-          <div class="m-4">
-            <label for="post">Post</label>
-            <textarea id="post" class="border rounded-1 w-100" required minlength="15"></textarea>
-          </div>
-          <button class="btn btn-primary btn-md text-secondary m-4 p-4">Submit</button>
-        </form>
-        <div class="p-2 col-12 col-lg-6">
-          <div class="d-flex flex-column">
-            <div class="bg-white m-2 p-4 d-flex flex-wrap flex-lg-nowrap flex-xl-nowrap border border-info rounded-5">
-              <div>
-                <h2>My favorite recepies</h2>
-                <a href="#" class="text-decoration-none">
-                  <figure class="figure d-flex">
-                    <figcaption class="figure-caption text-primary m-2">John</figcaption>
-                    <img src="/src/assets/images/forest-boy.jpg" class="text-bg-light figure-img img-fluid rounded-circle text-bg-primary">
-                  </figure>
-                </a>
+    <main class="container m-4">
+      <div class="row content-container">
+        <div class="bg-white border border-info rounded-5 p-4">
+          <div class="d-flex flex-wrap flex-lg-nowrap">
+            <div style="max-width: 600px;">
+              <div class="m-4" id="post-form-home">
+                <h1>Welcome to The Social Vegan</h1>
                 <p>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam officiis quaerat aspernatur 
-                  ab optio cupiditate ullam, ipsam ipsum! Reprehenderit, unde.
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis autem facere doloremque 
+                  exercitationem suscipit earum dolores.
                 </p>
               </div>
-              <div>
-                <img src="/src/assets/images/spice.jpg" class="img-fluid rounded-3" alt="Responsive image">
-              </div>
+              <h2 class="m-4 display-6">What's on your mind?</h2>
+              <form id="create-post">
+                <div class="m-4">
+                  <label for="title">Title</label>
+                  <input id="title" name="title" class="border rounded-1 w-100" type="text" required title="This is a required field.">
+                </div>
+                <div class="m-4">
+                  <label for="post">Post</label>
+                  <textarea id="post" name="textarea" class="border rounded-1 w-100"></textarea>
+                </div>
+                <div class="m-4">
+                  <label for="media">Image url</label>
+                  <input type="text" id="media" name="media" class="border rounded-1 w-100">
+                </div>
+                <div class="m-4">
+                  <label for="tags">Tags</label>
+                  <input type="text" id="tags" name="tags" class="border rounded-1 w-100">
+                </div>
+                <button name="submitbtn" class="btn btn-primary btn-md text-secondary m-4 p-4">Submit</button>
+              </form>
             </div>
-            <div class="bg-white m-2 p-4 d-flex flex-wrap flex-lg-nowrap flex-xl-nowrap border border-info rounded-5">
-              <div>
-                <h2>Cooking club?</h2>
-                <a href="#" class="text-decoration-none">
-                  <figure class="figure d-flex">
-                    <figcaption class="figure-caption text-primary m-2">Ylva</figcaption>
-                    <img src="/src/assets/images/forest-girl.jpg" class="text-bg-light figure-img img-fluid rounded-circle text-bg-primary">
-                  </figure>
-                </a>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, cumque.
-                </p>
-              </div>
-              <div>
-                <img src="/src/assets/images/cooking.jpg" class="img-fluid rounded-3" alt="Responsive image">
-              </div>
+            <div class="p-4">
+              <h2>Rules:</h2>
+              <p>1. Be nice to each other</p>
+              <p>2. Don't be mean</p>
+              <p>3. No meat promotions</p>
+              <p>4. Have fun.</p>
+              <img src="/src/assets/images/be-nice.jpg" alt="Humans holding a dog and a cat, facing each other" class="img img-fluid rounded-4">
             </div>
+          </div>
+          <button id="show-tags" class="btn btn-white text-primary">
+            <p class="p-2 text-decoration-underline">Show tags </p><i class="fa-solid fa-tag display-6"></i>
+          </button>
+          <button id="close-tags" class="btn btn-white text-primary">
+            <p class="p-2 text-decoration-underline">Close tags </p><i class="fa-solid fa-tag display-6"></i>
+          </button>
+          <div class="p-4 mt-4" style="width: 100%;">
+            <form id="tags-form" class="mb-2" style="display: none;">
+              <label for="search-tags">Get post by tag (one tag at a time):</label>
+              <input id="search-tags" type="search" name="tagsearch" class="rounded-2 border-info">
+              <p>Popular tags: test, tag, tags</p>
+            </form>
+            <div id="tag-container" class="bg-primary" style="display: none;"></div>
+            <div class="mt-4 d-flex">
+              <p class="btn btn-primary btn-md text-secondary m-4 p-2" id="btn-new">New posts first</p>
+              <p class="btn btn-primary btn-md text-secondary m-4 p-2" id="btn-old">Old posts first</p>
+            </div>
+          </div>
+          <div id="posts-container">
           </div>
         </div>
       </div>
